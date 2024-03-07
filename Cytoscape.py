@@ -2,6 +2,8 @@ from dash import Dash, html
 import dash_cytoscape as cyto
 import xlwings as xw
 
+cyto.load_extra_layouts()
+
 data = xw.Book("Berufsprofile-Kompetenzraster.xlsx")
 sheetRaster = data.sheets[0]
 sheetProfiles = data.sheets[1]
@@ -86,6 +88,7 @@ elements = parseRaster(sheetRaster, profiles)
 #filterElementsByProfile(elements, elementsNotInProfile)
 
 app = Dash(__name__)
+server = app.server
 
 app.layout = html.Div([
     cyto.Cytoscape(
@@ -116,7 +119,8 @@ app.layout = html.Div([
                     'content': 'data(label)',
                     'border-color': '#173F5F',
                     'border-width': '20px',
-                    'shape': 'rectangle'
+                    'shape': 'rectangle',
+                    'font-size': '20'
                 }
             },
                 {
@@ -179,9 +183,10 @@ app.layout = html.Div([
             {
                 'selector': '[level < "2"]',
                 'style': {
-                    'shape': 'diamond',
+                    'shape': 'octagon',
                     'content': 'data(label)',
                     'font-size': '40',
+                    'font-family': 'bold',
                     'min-width': '60px'
                 }
             }, 
