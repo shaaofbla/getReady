@@ -1,38 +1,72 @@
 from dash import Dash, html, dcc, Input, Output, ctx, callback
 import dash_cytoscape as cyto
 import xlwings as xw
+import json
+from copy import deepcopy
 
 cyto.load_extra_layouts()
+readNodePositionsFromExcel = False
 
 data = xw.Book("Berufsprofile-Kompetenzraster.xlsx")
 sheetRaster = data.sheets[0]
 sheetProfiles = data.sheets[1]
 
-def parseRaster(data, profile):
+with open('MathNodePositions.json', 'r') as file:
+    nodePositions = json.load(file)
+file.close()
+newNodePositions = deepcopy(nodePositions)
+
+def parseRaster(data, profile, nodePositions):
     maxRows = getMaxRows(data)
-    nodes = getNodes(data, maxRows, profile)
-    print(nodes)
+    nodes = getNodes(data, maxRows, profile, nodePositions)
+    if (readNodePositionsFromExcel):
+        nodePositions = {}
+        for node in nodes:
+            print(node)
+            id = node['data']['id']
+            try:
+                position = node['position']
+                position['x'] = position['x']/1000
+                position['y'] = position['y']/707
+                nodePositions[id] = position
+            except:
+                nodePositions[id] = {'x': 1.0, 'y': 1.0, 'locked': 'true'}
+        print(nodePositions)
+        with open("MathNodePositions.json", "w") as outfile:
+            json.dump(nodePositions, outfile, indent=4)
+    
+
     edges = getEdges(data, maxRows, profile)
     return nodes + edges
 
-def getNodes(data, maxRows, profile):
+def getNodes(data, maxRows, profile, nodePositions):
     nodeSet = {}
     for i in range(1,maxRows):
-        for j in range(3):
+        for j in range(4):
             label = data[i,4*j].value
             id = data[i,4*j+1].value
-            posX = data[i,4*j+2].value
-            posY = data[i,4*j+3].value
-            if (id not in nodeSet and id not in profile):
-                if (posX == None or posY == None):
-                    nodeSet[id] = {
-                        'data': {'id': id, 'label': label, 'level': j}
+            if (readNodePositionsFromExcel):
+                posX = data[i,4*j+2].value
+                posY = data[i,4*j+3].value
+                if (id not in nodeSet and id not in profile):
+                    if (posX == None or posY == None):
+                        nodeSet[id] = {
+                            'data': {'id': id, 'label': label, 'level': j}
+                        }
+                    else:
+                        nodeSet[id] = {
+                            'data': {'id': id, 'label': label, 'level': j},
+                            'position': {'x': posX*1000, 'y': posY*707, 'locked': 'true'}
                     }
-                else:
-                   nodeSet[id] = {
+            else:
+                if (id not in nodeSet and id not in profile):
+                    position = nodePositions[id]
+                    position['x'] = position['x']*1000
+                    position['y'] = position['y']*707
+                    nodeSet[id] = {
                         'data': {'id': id, 'label': label, 'level': j},
-                        'position': {'x': posX*1000, 'y': posY*707, 'locked': 'true'}
-                   }
+                        'position': position
+                    }
 
     nodes = []
     for key in nodeSet: 
@@ -43,13 +77,12 @@ def getNodes(data, maxRows, profile):
 def getEdges(data, maxRows, profile):
     edgeSet = {}
     for i in range(1,maxRows):
-        for j in range(2):
+        for j in range(3):
             id_source = data[i,4*j+1].value
             id_target = data[i,4*j+5].value
             id = str(id_source)+ "-"+str(id_target)
             if (id not in edgeSet and id_target not in profile):
                 edgeSet[id] = {'source': id_source, 'target': id_target}
-    
     edges = []
     for key in edgeSet: 
         edges.append(
@@ -87,20 +120,7 @@ def getMaxRows(data):
 
 profiles = parseProfiles(sheetProfiles)
 profiles = []
-elements = parseRaster(sheetRaster, profiles)
-#elements = cyto.filter('[id *="ZuV"]')
-
-#filterElementsByProfile(elements, elementsNotInProfile)
-
-styles = {
-    'output': {
-        'overflow-y': 'scroll',
-        'overflow-wrap': 'break-word',
-        'height': 'calc(100% - 25px)',
-        'border': 'thin lightgrey solid'
-    },
-    'tab': {'height': 'calc(98vh - 115px)'}
-}
+elements = parseRaster(sheetRaster, profiles, nodePositions)
 
 app = Dash(__name__)
 server = app.server
@@ -225,85 +245,48 @@ app.layout = html.Div([
         html.P(id='cytoscape-selectedNodeData-output')
     ])
 ])
-"""
-html.Div(className='four columns', children=[
-    dcc.Tabs(id='tabs-image-export', children=[
-        dcc.Tab(label='generate jpg', value='jpg'),
-        dcc.Tab(label='generate png', value='png')
-    ]),
-    html.Div(style=styles['tab'], children=[
-        html.Div(
-            id='image-text',
-            children='image data will appear here',
-            style=styles['output']
-        )
-    ]),
-    html.Div('Download graph:'),
-    html.Button("as jpg", id="btn-get-jpg"),
-    html.Button("as png", id="btn-get-png"),
-    html.Button("as svg", id="btn-get-svg")
-
-])
-"""
 
 
 @callback(Output('cytoscape-tapNodeData-output', 'children'),
               Input('cytoscape-image-export', 'tapNode'),
               log = True)
 def displayTapNodeData(data):
-    print(type(data))
     if data is  None:
         return
+    global newNodePositions
+    print(nodePositions['GFDZGuM3.1.3D1_desc'])
+    id = data['data']['id']
+    print(id)
     renderedPos = data['renderedPosition']
+    print("nodePosition: ")
     print(data['position'])
     print(renderedPos)
     renderedX = renderedPos['x']
     renderedY = renderedPos['y']
     print("relativ Position:")
     print("X: "+str(renderedX/1000)+" Y: "+str(renderedY/707))
+    newNodePositions[id]['x'] = renderedX/1000
+    newNodePositions[id]['y'] = renderedY/707
 
-@callback(Output('cytoscape-selectedNodeData-output', 'children'),
-              Input('cytoscape-image-export', 'selectedNodeData'),
-              log = True)
-def displaySelectNodesData(data):
-    if data is None:
-        return
-    print("list of elements: ")
-    print(data)
+    print(newNodePositions['ZuV'])
+    with open("MathNodePositions.json", "w") as outfile:
+        json.dump(newNodePositions, outfile, indent=4)
+    outfile.close()
+    print("wrote new positions.")
 
+    #print(nodePositions)
 
+try:
+    app.run(debug=True)
+finally:
+    for id,_ in newNodePositions.items():
+        #print(newNodePositions[id]['x'])
+        if newNodePositions[id]['x'] > 1.0:
+            print(id)
 
-"""
-@callback(
-    Output('image-text', 'children'),
-    Input('cytoscape-image-export', 'imageData'),
-)
-def put_image_string(data):
-    return data
-
-@callback(
-    Output("cytoscape-image-export", "generateImage"),
-    [
-        Input('tabs-image-export', 'value'),
-        Input("btn-get-jpg", "n_clicks"),
-        Input("btn-get-png", "n_clicks"),
-        Input("btn-get-svg", "n_clicks"),
-    ])
-def get_image(tab, get_jpg_clicks, get_png_clicks, get_svg_clicks):
-    ftype = tab
-    action = 'store'
-
-    if ctx.triggered:
-        if ctx.triggered_id != "tabs-image-export":
-            action = "download"
-            ftype = ctx.triggered_id.split("-")[-1]
-    return{
-        'type': ftype,
-        'action': action
-    }
-    """
-
-if __name__ == '__main__':
-    #app.run(debug=True)
-    parseRaster(sheetRaster,[])
-    pass
+    print(newNodePositions)
+    #  with open("MathNodePositions.json", "w") as outfile:
+    #       json.dump(newNodePositions, outfile, indent=4)
+    print("wrote new positions.")
+#parseRaster(sheetRaster,[], nodePositions)
+    
