@@ -3,6 +3,8 @@ import dash_cytoscape as cyto
 import xlwings as xw
 import json
 from copy import deepcopy
+import shutil
+import datetime
 
 cyto.load_extra_layouts()
 readNodePositionsFromExcel = False
@@ -15,6 +17,7 @@ with open('MathNodePositions.json', 'r') as file:
     nodePositions = json.load(file)
 file.close()
 newNodePositions = deepcopy(nodePositions)
+
 
 def parseRaster(data, profile, nodePositions):
     maxRows = getMaxRows(data)
@@ -124,6 +127,8 @@ elements = parseRaster(sheetRaster, profiles, nodePositions)
 
 app = Dash(__name__)
 server = app.server
+with open('stylesheet.json','r') as file:
+    style=json.load(file)
 
 app.layout = html.Div([
     html.Div(className = 'eight columns', children=[
@@ -131,121 +136,18 @@ app.layout = html.Div([
             id='cytoscape-image-export',
             layout={
                 'name': 'preset',
-                #'componentSpacing': '100'
-                    },## cose, concentric,breadthfirst, cose-bilkent, cola, euler, spread, dagre, klay
+                    },
             style={'width': '1000px', 'height': '707px'},
             elements= elements,
             zoomingEnabled = 0,
             panningEnabled = 0,
-            stylesheet=[
-            {
-                'selector': 'node',
-                'style': {
-                    'content': 'data(id)',
-                    'text-halign':'center',
-                    'text-valign':'center',
-                    'text-wrap':'wrap',
-                    'text-max-width': '150px',
-                    'width':"label",
-                    'height':"label",
-                    'background-color': 'blue',
-                    'shape':'ellipse',
-                    'padding': '10px',
-                    }
-                },
-            {
-                    'selector': '[id *= "A1_"],[id *= "A2_"]',
-                    'style': {
-                        'content': 'data(label)',
-                        'border-color': '#173F5F',
-                        'border-width': '20px',
-                        'shape': 'rectangle',
-                        'font-size': '10'
-                    }
-                },
-                    {
-                    'selector': '[id *= "B1_"],[id *= "B2_"]',
-                    'style': {
-                        'content': 'data(label)',
-                        'border-color': '#20639B',
-                        'border-width': '10px',
-                        'shape': 'rectangle'
-                    }
-                },
-            {
-                    'selector': '[id *= "C1_"],[id *= "C2_"]',
-                    'style': {
-                        'content': 'data(label)',
-                        'border-color': '#3CAEA3',
-                        'border-width': '10px',
-                        'shape': 'rectangle'
-                    }
-                },
-            {
-                    'selector': '[id *= "D1_"],[id *= "D2_"]',
-                    'style': {
-                        'content': 'data(label)',
-                        'border-color': '#F6D55C',
-                        'border-width': '10px',
-                        'shape': 'rectangle'
-                    }
-                },
-            {
-                    'selector': '[id *= "E1_"],[id *= "E2_"]',
-                    'style': {
-                        'content': 'data(label)',
-                        'border-color': '#ED553B',
-                        'border-width': '10px',
-                        'shape': 'rectangle'
-                    }
-                },
-            {
-                    'selector': '[id *= "ZuV"]',
-                    'style': {
-                        'background-color': '#05C793',
-                        'shape': 'rectangle'
-                    }
-                },
-            {
-                    'selector': '[id *= "FuR"]',
-                    'style': {
-                        'background-color': '#EF4365',
-                        'shape': 'rectangle'
-                    }
-                }, 
-                    {
-                    'selector': '[id *= "GFDZ"]',
-                    'style': {
-                        'background-color': '#FFCE5C',
-                        'shape': 'rectangle'
-                    }
-                }, 
-                {
-                    'selector': '[level < "3"]',
-                    'style': {
-                        'shape': 'ellipse',
-                        'content': 'data(id)',
-                        'font-size': '1'
-                    }
-                }, 
-                {
-                    'selector': '[level < "2"]',
-                    'style': {
-                        'shape': 'round-rectangle',
-                        'content': 'data(label)',
-                        'font-size': '15',
-                        #'font-family': 'bold',
-                        #'min-width': '100px',
-                        #'border-width': '0px'
-                    }
-                }, 
-            ]
+            stylesheet = style
+
         ),
         html.P(id='cytoscape-tapNodeData-output'),
         html.P(id='cytoscape-selectedNodeData-output')
     ])
 ])
-
 
 @callback(Output('cytoscape-tapNodeData-output', 'children'),
               Input('cytoscape-image-export', 'tapNode'),
@@ -274,19 +176,7 @@ def displayTapNodeData(data):
     outfile.close()
     print("wrote new positions.")
 
-    #print(nodePositions)
-
 try:
     app.run(debug=True)
 finally:
-    for id,_ in newNodePositions.items():
-        #print(newNodePositions[id]['x'])
-        if newNodePositions[id]['x'] > 1.0:
-            print(id)
-
-    print(newNodePositions)
-    #  with open("MathNodePositions.json", "w") as outfile:
-    #       json.dump(newNodePositions, outfile, indent=4)
-    print("wrote new positions.")
-#parseRaster(sheetRaster,[], nodePositions)
-    
+    shutil.copyfile('MathNodePositions.json','MathNodePositions{0}.json'.format(str(datetime.datetime.now())))

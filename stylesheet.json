@@ -1,0 +1,109 @@
+[
+    {
+        "selector": "node",
+        "style": {
+            "content": "data(id)",
+            "text-halign": "center",
+            "text-valign": "center",
+            "text-wrap": "wrap",
+            "text-max-width": "40px",
+            "width": "label",
+            "height": "label",
+            "background-color": "blue",
+            "shape": "ellipse",
+            "padding": "6px"
+        }
+    },
+    {
+        "selector": "[id *= 'A1_'],[id *= 'A2_']",
+        "style": {
+            "content": "data(label)",
+            "border-color": "#173F5F",
+            "border-width": "2px",
+            "shape": "rectangle",
+            "font-size": "4"
+        }
+    },
+    {
+        "selector": "[id *= 'B1_'],[id *= 'B2_']",
+        "style": {
+            "content": "data(label)",
+            "border-color": "#20639B",
+            "border-width": "2px",
+            "shape": "rectangle",
+            "font-size": "4"
+ 
+        }
+    },
+    {
+        "selector": "[id *= 'C1_'],[id *= 'C2_']",
+        "style": {
+            "content": "data(label)",
+            "border-color": "#3CAEA3",
+            "border-width": "2px",
+            "shape": "rectangle",
+            "font-size": "4"
+
+        }
+    },
+    {
+        "selector": "[id *= 'D1_'],[id *= 'D2_']",
+        "style": {
+            "content": "data(label)",
+            "border-color": "#F6D55C",
+            "border-width": "2px",
+            "shape": "rectangle",
+            "font-size": "4"
+
+        }
+    },
+    {
+        "selector": "[id *= 'E1_'],[id *= 'E2_']",
+        "style": {
+            "content": "data(label)",
+            "border-color": "#ED553B",
+            "border-width": "2px",
+            "shape": "rectangle",
+            "font-size": "4"
+
+        }
+    },
+    {
+        "selector": "[id *= 'ZuV']",
+        "style": {
+            "background-color": "#05C793",
+            "shape": "rectangle"
+        }
+    },
+    {
+        "selector": "[id *= 'FuR']",
+        "style": {
+            "background-color": "#EF4365",
+            "shape": "rectangle"
+        }
+    },
+    {
+        "selector": "[id *= 'GFDZ']",
+        "style": {
+            "background-color": "#FFCE5C",
+            "shape": "rectangle"
+        }
+    },
+    {
+        "selector": "[level < '3']",
+        "style": {
+            "shape": "ellipse",
+            "content": "data(id)",
+            "font-size": "1"
+        }
+    },
+    {
+        "selector": "[level < '2']",
+        "style": {
+            "shape": "round-rectangle",
+            "content": "data(label)",
+            "font-size": "12"
+
+        }
+    }
+]
