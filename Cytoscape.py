@@ -1,6 +1,8 @@
 from dash import Dash, html, dcc, Input, Output, ctx, callback
+import dash_bootstrap_components as dbcp
 import dash_cytoscape as cyto
 import xlwings as xw
+import json
 
 cyto.load_extra_layouts()
 
@@ -8,42 +10,42 @@ data = xw.Book("Berufsprofile-Kompetenzraster.xlsx")
 sheetRaster = data.sheets[0]
 sheetProfiles = data.sheets[1]
 
-def parseRaster(data, profile):
+with open('MathNodePositions.json', 'r') as file:
+    nodePositions = json.load(file)
+file.close()
+
+def parseRaster(data, profile, nodesPositions):
     maxRows = getMaxRows(data)
-    nodes = getNodes(data, maxRows, profile)
+    nodes = getNodes(data, maxRows, profile, nodesPositions)
     print(nodes)
     edges = getEdges(data, maxRows, profile)
     return nodes + edges
 
-def getNodes(data, maxRows, profile):
+def getNodes(data, maxRows, profile, nodePositions):
     nodeSet = {}
     for i in range(1,maxRows):
-        for j in range(3):
+        for j in range(4):
             label = data[i,4*j].value
             id = data[i,4*j+1].value
-            posX = data[i,4*j+2].value
-            posY = data[i,4*j+3].value
+
             if (id not in nodeSet and id not in profile):
-                if (posX == None or posY == None):
-                    nodeSet[id] = {
-                        'data': {'id': id, 'label': label, 'level': j}
-                    }
-                else:
-                   nodeSet[id] = {
-                        'data': {'id': id, 'label': label, 'level': j},
-                        'position': {'x': posX*1000, 'y': posY*707, 'locked': 'true'}
-                   }
+                position = nodePositions[id]
+                position['x'] = position['x']*1000
+                position['y'] = position['y']*707
+                nodeSet[id] = {
+                    'data': {'id': id, 'label': label, 'level': j},
+                    'position': position
+                }
 
     nodes = []
     for key in nodeSet: 
         nodes.append(nodeSet[key] )
-    #print(nodes)
     return nodes
 
 def getEdges(data, maxRows, profile):
     edgeSet = {}
     for i in range(1,maxRows):
-        for j in range(2):
+        for j in range(3):
             id_source = data[i,4*j+1].value
             id_target = data[i,4*j+5].value
             id = str(id_source)+ "-"+str(id_target)
@@ -86,8 +88,8 @@ def getMaxRows(data):
     return(i-1)
 
 profiles = parseProfiles(sheetProfiles)
-profiles = []
-elements = parseRaster(sheetRaster, profiles)
+#profiles = []
+elements = parseRaster(sheetRaster, profiles, nodePositions)
 #elements = cyto.filter('[id *="ZuV"]')
 
 #filterElementsByProfile(elements, elementsNotInProfile)
@@ -104,6 +106,8 @@ styles = {
 
 app = Dash(__name__)
 server = app.server
+with open('stylesheet.json','r') as file:
+    stylesheet=json.load(file)
 
 app.layout = html.Div([
     html.Div(className = 'eight columns', children=[
@@ -111,115 +115,10 @@ app.layout = html.Div([
             id='cytoscape-image-export',
             layout={
                 'name': 'preset',
-                #'componentSpacing': '100'
-                    },## cose, concentric,breadthfirst, cose-bilkent, cola, euler, spread, dagre, klay
+                    },
             style={'width': '1000px', 'height': '707px'},
             elements= elements,
-            zoomingEnabled = 0,
-            panningEnabled = 0,
-            stylesheet=[
-            {
-                'selector': 'node',
-                'style': {
-                    'content': 'data(id)',
-                    'text-halign':'center',
-                    'text-valign':'center',
-                    'text-wrap':'wrap',
-                    'text-max-width': '150px',
-                    'width':"label",
-                    'height':"label",
-                    'background-color': 'blue',
-                    'shape':'ellipse',
-                    'padding': '10px',
-                    }
-                },
-            {
-                    'selector': '[id *= "A1_"],[id *= "A2_"]',
-                    'style': {
-                        'content': 'data(label)',
-                        'border-color': '#173F5F',
-                        'border-width': '20px',
-                        'shape': 'rectangle',
-                        'font-size': '10'
-                    }
-                },
-                    {
-                    'selector': '[id *= "B1_"],[id *= "B2_"]',
-                    'style': {
-                        'content': 'data(label)',
-                        'border-color': '#20639B',
-                        'border-width': '10px',
-                        'shape': 'rectangle'
-                    }
-                },
-            {
-                    'selector': '[id *= "C1_"],[id *= "C2_"]',
-                    'style': {
-                        'content': 'data(label)',
-                        'border-color': '#3CAEA3',
-                        'border-width': '10px',
-                        'shape': 'rectangle'
-                    }
-                },
-            {
-                    'selector': '[id *= "D1_"],[id *= "D2_"]',
-                    'style': {
-                        'content': 'data(label)',
-                        'border-color': '#F6D55C',
-                        'border-width': '10px',
-                        'shape': 'rectangle'
-                    }
-                },
-            {
-                    'selector': '[id *= "E1_"],[id *= "E2_"]',
-                    'style': {
-                        'content': 'data(label)',
-                        'border-color': '#ED553B',
-                        'border-width': '10px',
-                        'shape': 'rectangle'
-                    }
-                },
-            {
-                    'selector': '[id *= "ZuV"]',
-                    'style': {
-                        'background-color': '#05C793',
-                        'shape': 'rectangle'
-                    }
-                },
-            {
-                    'selector': '[id *= "FuR"]',
-                    'style': {
-                        'background-color': '#EF4365',
-                        'shape': 'rectangle'
-                    }
-                }, 
-                    {
-                    'selector': '[id *= "GFDZ"]',
-                    'style': {
-                        'background-color': '#FFCE5C',
-                        'shape': 'rectangle'
-                    }
-                }, 
-                {
-                    'selector': '[level < "3"]',
-                    'style': {
-                        'shape': 'ellipse',
-                        'content': 'data(id)',
-                        'font-size': '1'
-                    }
-                }, 
-                {
-                    'selector': '[level < "2"]',
-                    'style': {
-                        'shape': 'round-rectangle',
-                        'content': 'data(label)',
-                        'font-size': '15',
-                        #'font-family': 'bold',
-                        #'min-width': '100px',
-                        #'border-width': '0px'
-                    }
-                }, 
-            ]
+            stylesheet=stylesheet
         ),
         html.P(id='cytoscape-tapNodeData-output'),
         html.P(id='cytoscape-selectedNodeData-output')
@@ -246,30 +145,6 @@ html.Div(className='four columns', children=[
 ])
 """
 
-
-@callback(Output('cytoscape-tapNodeData-output', 'children'),
-              Input('cytoscape-image-export', 'tapNode'),
-              log = True)
-def displayTapNodeData(data):
-    print(type(data))
-    if data is  None:
-        return
-    renderedPos = data['renderedPosition']
-    print(data['position'])
-    print(renderedPos)
-    renderedX = renderedPos['x']
-    renderedY = renderedPos['y']
-    print("relativ Position:")
-    print("X: "+str(renderedX/1000)+" Y: "+str(renderedY/707))
-
-@callback(Output('cytoscape-selectedNodeData-output', 'children'),
-              Input('cytoscape-image-export', 'selectedNodeData'),
-              log = True)
-def displaySelectNodesData(data):
-    if data is None:
-        return
-    print("list of elements: ")
-    print(data)
 
 
 
@@ -304,6 +179,6 @@ def get_image(tab, get_jpg_clicks, get_png_clicks, get_svg_clicks):
     """
 
 if __name__ == '__main__':
-    #app.run(debug=True)
-    parseRaster(sheetRaster,[])
+    app.run(debug=True)
+    #parseRaster(sheetRaster,[])
     pass
