@@ -7,7 +7,6 @@ import shutil
 import datetime
 
 cyto.load_extra_layouts()
-readNodePositionsFromExcel = False
 
 data = xw.Book("Berufsprofile-Kompetenzraster.xlsx")
 sheetRaster = data.sheets[0]
@@ -22,23 +21,6 @@ newNodePositions = deepcopy(nodePositions)
 def parseRaster(data, profile, nodePositions):
     maxRows = getMaxRows(data)
     nodes = getNodes(data, maxRows, profile, nodePositions)
-    if (readNodePositionsFromExcel):
-        nodePositions = {}
-        for node in nodes:
-            print(node)
-            id = node['data']['id']
-            try:
-                position = node['position']
-                position['x'] = position['x']/1000
-                position['y'] = position['y']/707
-                nodePositions[id] = position
-            except:
-                nodePositions[id] = {'x': 1.0, 'y': 1.0, 'locked': 'true'}
-        print(nodePositions)
-        with open("MathNodePositions.json", "w") as outfile:
-            json.dump(nodePositions, outfile, indent=4)
-    
-
     edges = getEdges(data, maxRows, profile)
     return nodes + edges
 
@@ -48,33 +30,19 @@ def getNodes(data, maxRows, profile, nodePositions):
         for j in range(4):
             label = data[i,4*j].value
             id = data[i,4*j+1].value
-            if (readNodePositionsFromExcel):
-                posX = data[i,4*j+2].value
-                posY = data[i,4*j+3].value
-                if (id not in nodeSet and id not in profile):
-                    if (posX == None or posY == None):
-                        nodeSet[id] = {
-                            'data': {'id': id, 'label': label, 'level': j}
-                        }
-                    else:
-                        nodeSet[id] = {
-                            'data': {'id': id, 'label': label, 'level': j},
-                            'position': {'x': posX*1000, 'y': posY*707, 'locked': 'true'}
-                    }
-            else:
-                if (id not in nodeSet and id not in profile):
-                    position = nodePositions[id]
-                    position['x'] = position['x']*1000
-                    position['y'] = position['y']*707
-                    nodeSet[id] = {
-                        'data': {'id': id, 'label': label, 'level': j},
-                        'position': position
-                    }
+
+            if (id not in nodeSet and id not in profile):
+                position = nodePositions[id]
+                position['x'] = position['x']*1000
+                position['y'] = position['y']*707
+                nodeSet[id] = {
+                    'data': {'id': id, 'label': label, 'level': j},
+                    'position': position
+                }
 
     nodes = []
     for key in nodeSet: 
         nodes.append(nodeSet[key] )
-    #print(nodes)
     return nodes
 
 def getEdges(data, maxRows, profile):
@@ -93,7 +61,6 @@ def getEdges(data, maxRows, profile):
             'data': edgeSet[key]
             }
         )
-    #print(edges)
     return edges
 
 def parseProfiles(data):
@@ -105,7 +72,6 @@ def parseProfiles(data):
     return items
 
 def filterElementsByProfile(elements, notProfile):
-    #print(elements[1])
     newDict = { key:value for (key,value) in elements[0].items() if value not in notProfile}
     print(newDict)
 
@@ -156,21 +122,13 @@ def displayTapNodeData(data):
     if data is  None:
         return
     global newNodePositions
-    print(nodePositions['GFDZGuM3.1.3D1_desc'])
     id = data['data']['id']
     print(id)
     renderedPos = data['renderedPosition']
-    print("nodePosition: ")
-    print(data['position'])
-    print(renderedPos)
     renderedX = renderedPos['x']
     renderedY = renderedPos['y']
-    print("relativ Position:")
-    print("X: "+str(renderedX/1000)+" Y: "+str(renderedY/707))
     newNodePositions[id]['x'] = renderedX/1000
     newNodePositions[id]['y'] = renderedY/707
-
-    print(newNodePositions['ZuV'])
     with open("MathNodePositions.json", "w") as outfile:
         json.dump(newNodePositions, outfile, indent=4)
     outfile.close()
