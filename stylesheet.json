@@ -103,7 +103,13 @@
             "shape": "round-rectangle",
             "content": "data(label)",
             "font-size": "12"
-
+        }
+    },
+    {
+        "selector": "edge",
+        "style" : {
+            "curve-style": "segment"
         }
     }
+
 ]

@@ -15,14 +15,26 @@ def getNodes(nodeData, nodePositions, profiles):
         position['y'] = position['y']*707
         level = nodeData[id]['level']
         if (id not in profiles):
-            nodes.append({
+            if (level < 3):
+                nodes.append({
+                    'data': {
+                        'id': id, 
+                        'label': label, 
+                        'level': level
+                        },
+                    'position': position 
+                })
+            else:
+                nodes.append({
                 'data': {
                     'id': id, 
                     'label': label, 
-                    'level': level
+                    'level': level,
+                    'profile': []
                     },
                 'position': position 
-            })
+            }) 
+
         else:
             profile = profiles[id]
             nodes.append({
@@ -77,9 +89,11 @@ def parseEdges(data):
 def parseProfiles(data):
     maxRows = getMaxRows(data)
     profilesByNodeId = {}
-    nJobs = 2
+    profilesLabels = {}
+    nJobs = 5
     for j in range(2,nJobs+2):
         jobId = data[(1,j)].value
+        profilesLabels[jobId] = data[(0,j)].value
         for i in range(2,maxRows):
             idTree = data[(i,1)].value
             if data[(i,j)].value == "x": #2: automobilassisten, 3: 
@@ -87,7 +101,7 @@ def parseProfiles(data):
                     profilesByNodeId[idTree] = [jobId]
                 else:
                     profilesByNodeId[idTree].append(jobId)
-    return profilesByNodeId
+    return profilesByNodeId, profilesLabels
 
         
 def filterElementsByProfile(elements, notProfile):
@@ -111,7 +125,7 @@ if __name__ == '__main__':
     data = xw.Book("Berufsprofile-Kompetenzraster.xlsx")
     sheetRaster = data.sheets[0]
     sheetProfiles = data.sheets[1]
-    profiles = parseProfiles(sheetProfiles)
+    profiles, profilesLabels = parseProfiles(sheetProfiles)
     nodeData = parseNodeData(sheetRaster)
     edges = parseEdges(sheetRaster)
 
@@ -122,4 +136,8 @@ if __name__ == '__main__':
     print(elements)
     with open("mathTargetsElements.json", "w") as outfile:
         json.dump(elements, outfile, indent=4)
+    outfile.close()
+
+    with  open("profilesLabels.json","w") as outfile:
+        json.dump(profilesLabels, outfile, indent=4)
     outfile.close()
