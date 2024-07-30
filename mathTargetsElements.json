@@ -1,0 +1,3041 @@
+[
+    {
+        "data": {
+            "id": "ZuV",
+            "label": "Zahlen und Variable",
+            "level": 0
+        },
+        "position": {
+            "x": 399.0,
+            "y": 297.8500000000001,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGaZ",
+            "label": "Ganze Zahlen",
+            "level": 1
+        },
+        "position": {
+            "x": 153.0,
+            "y": 312.6700000000001,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGaZ1.1.1",
+            "label": "Operieren mit ganzen Zahlen",
+            "level": 2
+        },
+        "position": {
+            "x": 79.0,
+            "y": 423.94999999999993,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGaZ1.1.1A1_desc",
+            "label": "Grundoperationen mit nat\u00fcrlichen Zahlen durchf\u00fchren",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 89.0,
+            "y": 352.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGaZ1.1.1A2_desc",
+            "label": "Zahlen erkennen, die durch 2, 5, 10, 100, 1'000 teibar sind",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 34.0,
+            "y": 368.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGaZ1.1.1B1_desc",
+            "label": "Zahlen bis 1 Milliarde lesen udn schreiben",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 27.0,
+            "y": 405.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGaZ1.1.1B2_desc",
+            "label": "Grundoperationen mit nat\u00fcrlichen Zahlen \u00fcberschlagen",
+            "level": 3,
+            "profile": [
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 31.0,
+            "y": 435.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGaZ1.1.1C1_desc",
+            "label": "Teilbarkeitsregeln (3,4,6,8,9,25,50) nutzen und Teiler nat\u00fcrlicher Zahlen bestimmen",
+            "level": 3
+        },
+        "position": {
+            "x": 33.0,
+            "y": 475.00000000000006,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGaZ1.1.1D1_desc",
+            "label": "Grundoperationnen mit ganzen Zahlen durchf\u00fchren",
+            "level": 3
+        },
+        "position": {
+            "x": 84.0,
+            "y": 488.99999999999994,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGaZ1.1.1E1_desc",
+            "label": "nat\u00fcrliche Zahlen in Primfaktoren zerlegen",
+            "level": 3
+        },
+        "position": {
+            "x": 118.0,
+            "y": 463.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGaZ1.1.2",
+            "label": "Potenzieren und radizieren, 10er Potenzen bestimmen, darstellen, erforschen",
+            "level": 2
+        },
+        "position": {
+            "x": 85.0,
+            "y": 245.275,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGaZ1.1.2A1_desc",
+            "label": "Die ersten 20 Quadratzahlen ohne TR bestimmen und geometrisch deuten",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 142.0,
+            "y": 257.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGaZ1.1.2B1_desc",
+            "label": "Wurzeln und Potenzen mit dem Rechner berechnen, sowie einfache Wurzeln unt Potenzen im Kopf bestimmen",
+            "level": 3
+        },
+        "position": {
+            "x": 109.0,
+            "y": 196.00000000000003,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGaZ1.1.2C1_desc",
+            "label": "Ein Produkt mit gleichen Faktoren als Potenz scheiben und umgekehrt",
+            "level": 3
+        },
+        "position": {
+            "x": 40.0,
+            "y": 202.99999999999997,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGaZ1.1.2D1_desc",
+            "label": "Zahlen in wissenschaftlicher Schreibweise mit positiven und negativen Exponenten lesen und schreiben",
+            "level": 3
+        },
+        "position": {
+            "x": 32.0,
+            "y": 257.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGaZ1.1.2E1_desc",
+            "label": "Zahlen in wissenschaftlicher Schreibweise mit positiven und negativen Exponenten addieren, subtrahieren, multiplizieren, dividieren",
+            "level": 3
+        },
+        "position": {
+            "x": 84.0,
+            "y": 304.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGaZ1.1.3",
+            "label": "Muster und Beziehungen bei ganzen Zahlen erforschen, beschreiben, darstellen",
+            "level": 2
+        },
+        "position": {
+            "x": 207.0,
+            "y": 375.88,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGaZ1.1.3A1_desc",
+            "label": "Systematische Aufgabenfolgen bilden, weiterf\u00fchren, ver\u00e4ndern und beschreiben",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 157.0,
+            "y": 380.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGaZ1.1.3A2_desc",
+            "label": "Gesetzm\u00e4ssigkeiten im Bereich der nat\u00fcrlichen Zahlen erforschen (z.B mithilfe der Stellentafel) und mit Beispielen konkretisieren",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 186.0,
+            "y": 430.99999999999994,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGaZ1.1.3B1_desc",
+            "label": "Figurenfolgen in systematische Aufgabenfolgen \u00fcbersetzen",
+            "level": 3
+        },
+        "position": {
+            "x": 244.0,
+            "y": 425.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGaZ1.1.3C1_desc",
+            "label": "Arithmetische Zusammenh\u00e4nge durch systematisches Variieren von Zahlen, Stellenwerten und Operationen erforschen und Beobachtungen festhalten",
+            "level": 3
+        },
+        "position": {
+            "x": 288.0,
+            "y": 379.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGaZ1.1.3D1_desc",
+            "label": "Arithmetische Zusammenh\u00e4nge erforschen, Strukturen auf andere Zahlbeispiele \u00fcbertragen und Beobachtungen festhalten",
+            "level": 3
+        },
+        "position": {
+            "x": 225.0,
+            "y": 339.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ",
+            "label": "Gebrochene Zahlen",
+            "level": 1
+        },
+        "position": {
+            "x": 212.0,
+            "y": 108.15999999999998,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ1.2.1",
+            "label": "Flexibel z\u00e4hlen, rationale Zahlen nach der Gr\u00f6sse ordnen und Br\u00fcche darstellen",
+            "level": 2
+        },
+        "position": {
+            "x": 400.0,
+            "y": 110.94999999999995,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ1.2.1A1_desc",
+            "label": "Zahlen mit Komma lesen, schreiben und ordnen",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 354.0,
+            "y": 131.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ1.2.1A2_desc",
+            "label": "In Schritten vorw\u00e4rts und r\u00fcckw\u00e4rts z\u00e4hlen",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 411.0,
+            "y": 148.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ1.2.1B1_desc",
+            "label": "Br\u00fcche mit den Nennern 2, 3, 4, 5, 6, 8, 10, 12, 20, 50, 100 ordnen und auf dem Zahlenstarhl einzeichnen",
+            "level": 3,
+            "profile": [
+                "automobilass"
+            ]
+        },
+        "position": {
+            "x": 451.0,
+            "y": 104.00000000000006,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ1.2.1C1_desc",
+            "label": "positive und negative Zahlen auf dem Zahlenstral ordnen",
+            "level": 3,
+            "profile": [
+                "automobilass"
+            ]
+        },
+        "position": {
+            "x": 427.0,
+            "y": 60.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ1.2.1D1_desc",
+            "label": "Potenzen mit nat\u00fcrlichenm Exponenten lesen, schreiben und berechnen",
+            "level": 3
+        },
+        "position": {
+            "x": 362.0,
+            "y": 77.99999999999999,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ1.2.2",
+            "label": "Zahlen runden und Ergebnisse \u00fcberschlagen",
+            "level": 2
+        },
+        "position": {
+            "x": 277.0,
+            "y": 44.879999999999995,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ1.2.2A1_desc",
+            "label": "Zahlen mit Komma runden",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 298.0,
+            "y": 77.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ1.2.2B1_desc",
+            "label": "Summen und Differenzen von Zahlen mit Komma \u00fcberschlagen",
+            "level": 3
+        },
+        "position": {
+            "x": 328.0,
+            "y": 36.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ1.2.2C1_desc",
+            "label": "Rechenergebnisse sinnvoll runden",
+            "level": 3
+        },
+        "position": {
+            "x": 263.0,
+            "y": 22.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ1.2.2D1_desc",
+            "label": "Produkte und Quotienten von Zahlen mit Komma \u00fcberschlagen",
+            "level": 3
+        },
+        "position": {
+            "x": 225.0,
+            "y": 54.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ1.2.3",
+            "label": "Mit rationalen Zahlen (Zahlen mit Komma sowie Br\u00fcchen) operieren",
+            "level": 2
+        },
+        "position": {
+            "x": 113.0,
+            "y": 77.41499999999996,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ1.2.3A1_desc",
+            "label": "Zahlen bis 5 Wertziffern addieren und subtrahieren",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 151.0,
+            "y": 39.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ1.2.3B1_desc",
+            "label": "Zahlen bis 5 Wertziffern multiplizieren und die Ergebnisse \u00fcberpr\u00fcfen",
+            "level": 3
+        },
+        "position": {
+            "x": 45.0,
+            "y": 75.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ1.2.3B2_desc",
+            "label": "Br\u00fcche mit den Nennern 2, 3, 4, 5, 6, 8, 10, 12, 20, 50, 100  k\u00fcrzen, erweitern, addieren und subtrahieren",
+            "level": 3
+        },
+        "position": {
+            "x": 82.0,
+            "y": 36.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ1.2.3C1_desc",
+            "label": "Br\u00fcche mit den Nennern 2, 3, 4, 5, 6, 8, 10, 12, 20, 50, 100  multiplizieren",
+            "level": 3
+        },
+        "position": {
+            "x": 52.0,
+            "y": 116.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ1.2.3D1_desc",
+            "label": "Grundoperationen mit rationalen Zahlen ausf\u00fchren und durch Umkehroperationen \u00fcberpr\u00fcfen",
+            "level": 3
+        },
+        "position": {
+            "x": 111.0,
+            "y": 134.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ1.2.4",
+            "label": "Rationale Zahlen darstellen, in andere Schreibweisen \u00fcbertragen sowie Muster und Zahlenfolgen beschreiben",
+            "level": 2
+        },
+        "position": {
+            "x": 220.0,
+            "y": 194.92500000000007,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ1.2.4A1_desc",
+            "label": "Br\u00fcche darstellen und vergleichen sowie Darstellungen Interpretieren",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 180.0,
+            "y": 146.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ1.2.4B1_desc",
+            "label": "Br\u00fcche (Nenner 2, 3, 4, 5, 6, 8, 10, 20,  50, 100, 1'000), Zahlen mit Komma und Prozentzahlen je in die beiden anderen Schreibweisen \u00fcbertragen. \n\nSumme und Differenzen von gebrochenen Zahlen darstellen",
+            "level": 3
+        },
+        "position": {
+            "x": 167.0,
+            "y": 199.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ1.2.4C1_desc",
+            "label": "Zahlenfolgen mit positiven rationalen Zahlen beschreiben. Eigenschaften von rationalen Zahlen erforschen und beschreiben\n\nProdukte von gebrochenen zahlen darstellen",
+            "level": 3
+        },
+        "position": {
+            "x": 220.0,
+            "y": 252.99999999999997,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVGeZ1.2.4D1_desc",
+            "label": "Anzahl Nachkommmastellen bei Produkten und Quotienten von Zahlen mit Komma erforschen und begr\u00fcnden",
+            "level": 3
+        },
+        "position": {
+            "x": 279.0,
+            "y": 236.99999999999997,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVAl",
+            "label": "Algebra (Terme und Gleichungen)",
+            "level": 1
+        },
+        "position": {
+            "x": 207.0,
+            "y": 550.45,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVAl1.3.1",
+            "label": "Terme vergleichen und umformen, Gesetze und Regeln anwenden, mit Variablen operieren",
+            "level": 2
+        },
+        "position": {
+            "x": 103.0,
+            "y": 566.05,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVAl1.3.1A1_desc",
+            "label": "Zahlen mit Klammern auswerten",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 129.0,
+            "y": 535.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVAl1.3.1B1_desc",
+            "label": "Zahlenterme mit Klammern und Grundoperationen (Punkt vor Strich) berechnen",
+            "level": 3,
+            "profile": [
+                "automobilass"
+            ]
+        },
+        "position": {
+            "x": 75.0,
+            "y": 530.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVAl1.3.1C1_desc",
+            "label": "Terme mit Variablen addieren und subtrahieren",
+            "level": 3
+        },
+        "position": {
+            "x": 42.0,
+            "y": 563.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVAl1.3.1D1_desc",
+            "label": "Terme mit Variablen umformen bzw. sinnvoll vereinfachen (z.B. Terme mit Binomen) \n\nGrundoperationen mit Variablen und Br\u00fcchen ausf\u00fchren",
+            "level": 3
+        },
+        "position": {
+            "x": 43.0,
+            "y": 613.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVAl1.3.1E1_desc",
+            "label": "Terme mit Potenzen und Quadratwurzeln umformen und berechnen",
+            "level": 3
+        },
+        "position": {
+            "x": 100.0,
+            "y": 603.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVAl1.3.2",
+            "label": "Gleichungen l\u00f6sen, aufstellen und deuten",
+            "level": 2
+        },
+        "position": {
+            "x": 188.0,
+            "y": 650.725,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVAl1.3.2A1_desc",
+            "label": "Gleichwertigkeit von zwei Zahlentermen \u00fcberpr\u00fcfen",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 164.0,
+            "y": 611.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVAl1.3.2B1_desc",
+            "label": "Gleichungen mit einer Variablen durch Einsetzen oder Umkehroperationen l\u00f6sen und \u00fcberpr\u00fcfen",
+            "level": 3
+        },
+        "position": {
+            "x": 131.0,
+            "y": 645.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVAl1.3.2C1_desc",
+            "label": "lineare Gleichungen mit einer Variablen mit \u00c4quivalenzumformungen l\u00f6sen und \u00fcberpr\u00fcfen",
+            "level": 3
+        },
+        "position": {
+            "x": 130.0,
+            "y": 684.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVAl1.3.2D1_desc",
+            "label": "Gleichungen sprachlich deuten und zu Texten Gleichungen finden",
+            "level": 3
+        },
+        "position": {
+            "x": 193.0,
+            "y": 690.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVAl1.3.2E1_desc",
+            "label": "Quadratische Gleichungen durch Faktorzerlegung l\u00f6sen",
+            "level": 3
+        },
+        "position": {
+            "x": 250.0,
+            "y": 641.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVAl1.3.2E2_desc",
+            "label": "Bruchgleichungen l\u00f6sen",
+            "level": 3
+        },
+        "position": {
+            "x": 246.0,
+            "y": 674.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVAl1.3.3",
+            "label": "Anzahlen, Zahlenfolgen und Terme veranschaulichen und verallgemeinern",
+            "level": 2
+        },
+        "position": {
+            "x": 287.0,
+            "y": 550.26,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVAl1.3.3A1_desc",
+            "label": "Figurenfolgen und arithmetische Muster weiterf\u00fchren",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 274.0,
+            "y": 604.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVAl1.3.3B1_desc",
+            "label": "zu Figurenfolgen oder arithmetischen Mustern Gesetzm\u00e4ssigkeiten formulieren",
+            "level": 3
+        },
+        "position": {
+            "x": 332.0,
+            "y": 603.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVAl1.3.3C1_desc",
+            "label": "Arithmetische und algebraische Terme veranschaulichen, insbesondere mit Text, Symbolen und Skizzen",
+            "level": 3
+        },
+        "position": {
+            "x": 365.0,
+            "y": 557.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVAl1.3.3D1_desc",
+            "label": "Terme geometrisch interpretieren\n\nLineare Figurenfolgen in einen Term \u00fcbertragen",
+            "level": 3
+        },
+        "position": {
+            "x": 362.0,
+            "y": 512.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "ZuVAl1.3.3E1_desc",
+            "label": "Zahlen und Operationen in Buchstabentermen systematisch variieren\n\nWachstum in Termen, Zahlenfolgen und Graphen erkennen und beschreiben",
+            "level": 3
+        },
+        "position": {
+            "x": 304.0,
+            "y": 493.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuR",
+            "label": "Form und Raum",
+            "level": 0
+        },
+        "position": {
+            "x": 448.0,
+            "y": 431.8500000000001,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE",
+            "label": "Geometrie der Ebene",
+            "level": 1
+        },
+        "position": {
+            "x": 530.0,
+            "y": 363.11000000000007,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.1",
+            "label": "Mit Zirkel, Geodreieck und Lineal konstruieren, Figuren in der Ebene abbilden, zerlegen und zusammenf\u00fcgen",
+            "level": 2
+        },
+        "position": {
+            "x": 626.0,
+            "y": 369.92500000000007,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.1A1_desc",
+            "label": "Skizzen und Zeichnungen nachvollziehen sowie mit Rastern, Zirkel und Geodreieck (Kreise, Parallelen, Rechtewinkel, Strecken) zeichnen",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 566.0,
+            "y": 426.00000000000006,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.1B1_desc",
+            "label": "Winkel \u00fcbertragen, messen und konstruieren",
+            "level": 3
+        },
+        "position": {
+            "x": 621.0,
+            "y": 430.99999999999994,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.1B2_desc",
+            "label": "Figuren mit dem Geodreieck konstruieren, zerlegen, zusammenf\u00fcgen und deren Gr\u00f6sse \u00e4ndern",
+            "level": 3
+        },
+        "position": {
+            "x": 673.0,
+            "y": 425.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.1C1_desc",
+            "label": "Winkelhalbierende, Mittelsenkrechte und einfache Figuren korrekt beschriften sowie mit Geodreick und Zirkel konstruieren",
+            "level": 3
+        },
+        "position": {
+            "x": 687.0,
+            "y": 380.99999999999994,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.1C2_desc",
+            "label": "Figuren spiegeln (Punkspiegelung, Achsenspiegelung) und verschieben un entsprechende Abbildungen erkennen",
+            "level": 3
+        },
+        "position": {
+            "x": 704.0,
+            "y": 334.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.1D1_desc",
+            "label": "Figuren mit Zirkel und Geodreieck drehen",
+            "level": 3
+        },
+        "position": {
+            "x": 649.0,
+            "y": 306.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.1E1_desc",
+            "label": "Figuren bei gegebenem Streckfaktor und Streckzentrum strecken",
+            "level": 3
+        },
+        "position": {
+            "x": 596.0,
+            "y": 332.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.2",
+            "label": "L\u00e4ngen, Winkel und Fl\u00e4cheninhalte an Drei-, Vierecken und Kreisfiguren bestimmen und Berechnungen ausf\u00fchren",
+            "level": 2
+        },
+        "position": {
+            "x": 639.0,
+            "y": 212.22500000000002,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.2A1_desc",
+            "label": "den Umfang von Vielecken messen, ausz\u00e4hlen und berechnen sowie den Fl\u00e4cheninhalt von Quadraten und Rechtecken berechnen",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 649.0,
+            "y": 269.00000000000006,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.2B1_desc",
+            "label": "den Fl\u00e4cheninhalt von nicht rechteckigen Figuren in Rastern ann\u00e4hernd besteimmen",
+            "level": 3
+        },
+        "position": {
+            "x": 714.0,
+            "y": 267.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.2C1_desc",
+            "label": "Winkel in Figuren durch vergleichen und berechnen bestimmen",
+            "level": 3
+        },
+        "position": {
+            "x": 711.0,
+            "y": 188.00000000000003,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.2C2_desc",
+            "label": "den Fl\u00e4cheninhalt von Drei- und Vierecken berechnen unter anderem auch mithilfe des Satzes von Pytagoras",
+            "level": 3
+        },
+        "position": {
+            "x": 721.0,
+            "y": 225.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.2D1_desc",
+            "label": "den Umfang und den Fl\u00e4cheninhalt von Kreisen berechnen",
+            "level": 3,
+            "profile": [
+                "automobilass"
+            ]
+        },
+        "position": {
+            "x": 675.0,
+            "y": 153.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.2D2_desc",
+            "label": "flexibel die Formeln zur Berechnung des Fl\u00e4cheninhalts von Drei- und Vierecken anwenden",
+            "level": 3
+        },
+        "position": {
+            "x": 619.0,
+            "y": 174.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.2E1_desc",
+            "label": "Strecken und Fl\u00e4cheninhalte von Kreissektoren und Kreisringen berechnen",
+            "level": 3
+        },
+        "position": {
+            "x": 591.0,
+            "y": 213.99999999999997,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.3",
+            "label": "Beziehungen zwischen L\u00e4ngen, Winkeln und Fl\u00e4cheninhalten erforschen",
+            "level": 2
+        },
+        "position": {
+            "x": 586.0,
+            "y": 88.25,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.3A1_desc",
+            "label": "Quadrate und Rechntecke systematisch variieren, Beoachtungen festhalten und Vermutungen formulieren",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 621.0,
+            "y": 117.99999999999999,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.3B1_desc",
+            "label": "beim Erforschen geometrischer Beziehungen Vermutungen formulieren, \u00fcberpr\u00fcfen und allenfalls neue Vermutungen formulieren",
+            "level": 3
+        },
+        "position": {
+            "x": 641.0,
+            "y": 67.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.3C1_desc",
+            "label": "Figuren systematisch variieren, zerlegen und Auswirkungen erforschen",
+            "level": 3
+        },
+        "position": {
+            "x": 606.0,
+            "y": 23.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.3C2_desc",
+            "label": "Aussagen und Fl\u00e4chenformeln zu Drei- und Vierecken mit Skizzen und Modellen belegen",
+            "level": 3
+        },
+        "position": {
+            "x": 550.0,
+            "y": 28.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.3D1_desc",
+            "label": "geometrische Beziehungen in Vielecken- insbesondere zwischen Winkeln, L\u00e4ngen und Fl\u00e4chen - variieren und dazu Vermutungen austauschen",
+            "level": 3
+        },
+        "position": {
+            "x": 511.0,
+            "y": 73.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.3E1_desc",
+            "label": "Aussagen zu geometrischen Beziehungen im Dreieck, Viereck und Kreis \u00fcberpr\u00fcfen",
+            "level": 3
+        },
+        "position": {
+            "x": 544.0,
+            "y": 117.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.4",
+            "label": "Koordinaten von Punkten bestimmen, in Koordinatensystemen operieren, Pl\u00e4ne lesen, nutzen und zeichnen",
+            "level": 2
+        },
+        "position": {
+            "x": 475.0,
+            "y": 216.97000000000003,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.4A1_desc",
+            "label": "Wege und Lagebeziehungen skizzieren bzw. entsprechende Pl\u00e4ne nutzen",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 523.0,
+            "y": 227.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.4B1_desc",
+            "label": "zu Koordinaten Figuren zueichnen sowie die Koordinaten von Punkten bestimmen",
+            "level": 3
+        },
+        "position": {
+            "x": 530.0,
+            "y": 175.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.4C1_desc",
+            "label": "Karten lesen und Streckenl\u00e4ngen aufgrund von Maastabangaben bestimmen und umgekehrt",
+            "level": 3
+        },
+        "position": {
+            "x": 469.0,
+            "y": 172.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.4D1_desc",
+            "label": "Abbildungen im Koordinatensystem nach Anweisungen ausf\u00fchrenb und ver\u00e4ndern",
+            "level": 3
+        },
+        "position": {
+            "x": 419.0,
+            "y": 209.99999999999994,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.4D2_desc",
+            "label": "einen Wohnungsplan nach Masstab zeichnen bzw. entsprechender Pl\u00e4nse lesen",
+            "level": 3
+        },
+        "position": {
+            "x": 435.0,
+            "y": 251.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGdE2.1.4E1_desc",
+            "label": "aufgrund von Pl\u00e4nen reale Fl\u00e4cheninhalte berechnen",
+            "level": 3
+        },
+        "position": {
+            "x": 465.0,
+            "y": 292.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGiR",
+            "label": "Geometrie im Raum",
+            "level": 1
+        },
+        "position": {
+            "x": 510.0,
+            "y": 522.31,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGiR2.2.1",
+            "label": "K\u00f6rper und r\u00e4umliche Beziehungen darstellen",
+            "level": 2
+        },
+        "position": {
+            "x": 437.0,
+            "y": 611.775,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGiR2.2.1A1_desc",
+            "label": "aus Quadraten und Rechtecken W\u00fcrfel und Quader herstellen und Quader in Quadrate zerlegen",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 428.0,
+            "y": 568.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGiR2.2.1B1_desc",
+            "label": "aus Quadern zusammengesetze K\u00f6rper skizzieren und beschreiben\n\ndas Netz von W\u00fcrfeln und Quadern zeichnen",
+            "level": 3
+        },
+        "position": {
+            "x": 392.0,
+            "y": 616.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGiR2.2.1C1_desc",
+            "label": "Grundriss, Schr\u00e4gbild, Aufsicht, Vorderansicht und Seitenansicht von rechtwinkligen K\u00f6rper in einem Raster zeichen",
+            "level": 3
+        },
+        "position": {
+            "x": 397.0,
+            "y": 682.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGiR2.2.1D1_desc",
+            "label": "Prismen und Pyramiden skizzieren und als Schr\u00e4gbild, in der Auf- und Seitenansicht sowie als Netz darstellen",
+            "level": 3
+        },
+        "position": {
+            "x": 456.0,
+            "y": 680.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGiR2.2.1E1_desc",
+            "label": "Skizzen f\u00fcr massstabgetreue Modelle anfertigen oder Modelle herstellen",
+            "level": 3
+        },
+        "position": {
+            "x": 478.0,
+            "y": 639.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGiR2.2.2",
+            "label": "K\u00f6rper und r\u00e4umliche Beziehungen in verschienenen Lagen vorstellen und beschreiben",
+            "level": 2
+        },
+        "position": {
+            "x": 607.0,
+            "y": 526.1,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGiR2.2.2A1_desc",
+            "label": "Quader und W\u00fcrfel in der Vorstellung kippen und drehen",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 611.0,
+            "y": 555.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGiR2.2.2B1_desc",
+            "label": "Quader und W\u00fcrfel in der Vorstellunge zerlegen und zusammenf\u00fcgen",
+            "level": 3
+        },
+        "position": {
+            "x": 669.0,
+            "y": 541.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGiR2.2.2C1_desc",
+            "label": "K\u00f6rper in der Vorstellung drehen und kippen",
+            "level": 3
+        },
+        "position": {
+            "x": 645.0,
+            "y": 496.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGiR2.2.2D1_desc",
+            "label": "K\u00f6rper in der Vorstellung ver\u00e4nder und Ergebnisse beschreiben",
+            "level": 3
+        },
+        "position": {
+            "x": 583.0,
+            "y": 489.99999999999994,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGiR2.2.3",
+            "label": "L\u00e4ngen, Fl\u00e4cheninhalte und Volumen von K\u00f6rpern bestimmen, Berechnungen ausf\u00fchren, Beziehungen zwischen L\u00e4ngen, Fl\u00e4cheninhalten und Volumen erforschen",
+            "level": 2
+        },
+        "position": {
+            "x": 589.0,
+            "y": 600.75,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGiR2.2.3A1_desc",
+            "label": "Quader aus Einheitsw\u00fcrfeln zusammenbauen und das Volumen ausz\u00e4hlen",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 537.0,
+            "y": 597.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGiR2.2.3B1_desc",
+            "label": "Volumen und Seitenfl\u00e4chen von Quadern berechnen",
+            "level": 3
+        },
+        "position": {
+            "x": 537.0,
+            "y": 637.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGiR2.2.3C1_desc",
+            "label": "das Volumen beliebiger K\u00f6rper durch Vergleich mit Quadern sch\u00e4tzen\n\nKantenl\u00e4gen, Seitenfl\u00e4chen und Volumen von Quadern berechnen und entsprechend Beziehungen erkennen",
+            "level": 3
+        },
+        "position": {
+            "x": 590.0,
+            "y": 667.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGiR2.2.3D1_desc",
+            "label": "Kantenl\u00e4ngen, Fl\u00e4chen und Volumen an geraden Prismen und Zylindern berechnen",
+            "level": 3
+        },
+        "position": {
+            "x": 650.0,
+            "y": 658.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "FuRGiR2.2.3E1_desc",
+            "label": "Strecken, Fl\u00e4chen und Volumen an Pyramiden, Kegeln und Kugeln berechnen\n\nKantenl\u00e4ngen, Oberfl\u00e4chen oder volumen von K\u00f6rpern systematisch variieren und Zusammenh\u00e4nge formulieren",
+            "level": 3
+        },
+        "position": {
+            "x": 663.0,
+            "y": 603.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZ",
+            "label": "Gr\u00f6ssen, Funktionen, Daten und Zufall",
+            "level": 0
+        },
+        "position": {
+            "x": 806.0,
+            "y": 295.85,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZGuM",
+            "label": "Gr\u00f6ssen und Masse",
+            "level": 1
+        },
+        "position": {
+            "x": 830.0,
+            "y": 162.60000000000002,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZGuM3.1.1",
+            "label": "SI-Einheiten kennen, sich an Referenzgr\u00f6ssen orientieren, Repr\u00e4sentanten zu Referenzgr\u00f6ssen kennen, Masseinheiten verwenden",
+            "level": 2
+        },
+        "position": {
+            "x": 899.0,
+            "y": 181.97500000000002,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZGuM3.1.1A1_desc",
+            "label": "sich bei L\u00e4ngen-, Fl\u00e4chen-, Gewichts- und Zeitmassen an Referenzgr\u00f6ssen orientieren, sowie deren Abk\u00fcrzung verwenden",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 875.0,
+            "y": 223.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZGuM3.1.1B1_desc",
+            "label": "sich bei Raum- und Hohlmassen an Referenzgr\u00f6ssen orientieren, sowie deren Abk\u00fcrzungen verwenden",
+            "level": 3,
+            "profile": [
+                "automobilass"
+            ]
+        },
+        "position": {
+            "x": 935.0,
+            "y": 235.99999999999997,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZGuM3.1.1C1_desc",
+            "label": "zusammengesetzte Masseinheiten und deren Abk\u00fcrzungen verwenden",
+            "level": 3,
+            "profile": [
+                "automobilass"
+            ]
+        },
+        "position": {
+            "x": 956.0,
+            "y": 192.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZGuM3.1.1D1_desc",
+            "label": "das System der dezimalen Masseinheiten (SI-System) und deren Vors\u00e4tze nutzen und verstehen",
+            "level": 3,
+            "profile": [
+                "automobilass"
+            ]
+        },
+        "position": {
+            "x": 935.0,
+            "y": 150.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZGuM3.1.2",
+            "label": "Gr\u00f6ssen sch\u00e4tzen, mit ihnen rechnen und umwandeln",
+            "level": 2
+        },
+        "position": {
+            "x": 897.0,
+            "y": 61.60000000000002,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZGuM3.1.2A1_desc",
+            "label": "Gr\u00f6ssen (Geld, L\u00e4ngen, Gewicht bzw. Masse) sch\u00e4tzen, berstimmen, vergleichen, runden, addieren, subtrahieren und umwandeln",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 925.0,
+            "y": 101.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZGuM3.1.2B1_desc",
+            "label": "Fl\u00e4cheninhalte und Volumen in einer geeigneten Masseinheit sch\u00e4tzen und umwandeln",
+            "level": 3
+        },
+        "position": {
+            "x": 959.0,
+            "y": 54.99999999999999,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZGuM3.1.2C1_desc",
+            "label": "Sachsituationen zwischen Gr\u00f6ssen mit Przentzahlen beschreiben",
+            "level": 3
+        },
+        "position": {
+            "x": 852.0,
+            "y": 37.99999999999994,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZGuM3.1.2C2_desc",
+            "label": "Zeiteinheiten situationsgerecht ausw\u00e4hlen und diese umwandeln",
+            "level": 3
+        },
+        "position": {
+            "x": 907.0,
+            "y": 27.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZGuM3.1.2D1_desc",
+            "label": "flexibel mit Raum- und Hohlmasse umgehen",
+            "level": 3
+        },
+        "position": {
+            "x": 854.0,
+            "y": 71.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZGuM3.1.3",
+            "label": "Gr\u00f6ssen sch\u00e4tzen, mit ihnen rechnen und umwandeln",
+            "level": 2
+        },
+        "position": {
+            "x": 756.0,
+            "y": 84.55000000000007,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZGuM3.1.3E1_desc",
+            "label": "Berechnungen mit zusammengesetzten Masszahlen durchf\u00fchren und entsprechende Masseinheiten umrechnen",
+            "level": 3
+        },
+        "position": {
+            "x": 754.0,
+            "y": 145.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZGuM3.1.3A1_desc",
+            "label": "Datens\u00e4tzen ordnen sowie Mittelwert, Maximum und Minimum bestimmen",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 817.0,
+            "y": 102.00000000000001,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZGuM3.1.3B1_desc",
+            "label": "Alltagssituationen in mathematische Sprache \u00fcbersetzebn und geeignete Masseinheiten w\u00e4hlen",
+            "level": 3
+        },
+        "position": {
+            "x": 795.0,
+            "y": 54.99999999999999,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZGuM3.1.3C1_desc",
+            "label": "Daten zu verschiedenen Gr\u00f6ssen mittels Experimenten, Messungen und Berechnungen sammeln, in einem Diagramm darstellen und interpretieren",
+            "level": 3
+        },
+        "position": {
+            "x": 732.0,
+            "y": 47.00000000000001,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZGuM3.1.3D1_desc",
+            "label": "Beziehungen zwischen verschiedenen Gr\u00f6ssen datengest\u00fctzt darstellen",
+            "level": 3
+        },
+        "position": {
+            "x": 717.0,
+            "y": 101.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZFZP",
+            "label": "Funktionale Zusammenh\u00e4nge, Proportionalit\u00e4t",
+            "level": 1
+        },
+        "position": {
+            "x": 828.0,
+            "y": 465.1000000000001,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZFZP3.2.1",
+            "label": "Proportionale und lineare Situationen erkennen. Zu proportionalen, umgekerht bzw. indirekt proportionalen und linearen Beziehungen Berrechnungen ausf\u00fchren",
+            "level": 2
+        },
+        "position": {
+            "x": 769.0,
+            "y": 526.0749999999999,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZFZP3.2.1A1_desc",
+            "label": "Proportionalit\u00e4t in Sachsituationen erkennen und mit proportionalen Beziehungen rechnen",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 741.0,
+            "y": 482.00000000000006,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZFZP3.2.1B1_desc",
+            "label": "zu einer proportionalen Wertetabelle Zusammenh\u00e4nge beschreiben",
+            "level": 3,
+            "profile": [
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 721.0,
+            "y": 522.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZFZP3.2.1C1_desc",
+            "label": "Prozentangaben als proportionale Zuordnungen verstehen und Prozentrechnungen ausf\u00fchren",
+            "level": 3,
+            "profile": [
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 745.0,
+            "y": 573.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZFZP3.2.1D1_desc",
+            "label": "umgekehrt bzw. indirekt proportionalen Beziehungen erkennen und damit rechnen",
+            "level": 3
+        },
+        "position": {
+            "x": 806.0,
+            "y": 568.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZFZP3.2.1E1_desc",
+            "label": "verschiedene funktionale Zusammenh\u00e4nge in Sachsituationen erkennen",
+            "level": 3
+        },
+        "position": {
+            "x": 817.0,
+            "y": 528.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZFZP3.2.2",
+            "label": "Sachsituationen mit Wertetabellen erfassen, mit Funktionsgraphen darstellen und entsprechende Funktionsgleichungen bestimmen bzw. zu mathematischen Darstellungen Sachsituationen finden",
+            "level": 2
+        },
+        "position": {
+            "x": 879.0,
+            "y": 602.4,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZFZP3.2.2A1_desc",
+            "label": "funktionale Zusammenh\u00e4nge in Wertetabellen erfassen",
+            "level": 3,
+            "profile": [
+                "automobilass",
+                "detailhandelsass"
+            ]
+        },
+        "position": {
+            "x": 783.0,
+            "y": 617.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZFZP3.2.2B2_desc",
+            "label": "den Zusammenhang zwischen Werten in einer Tabelle in einem funktionalen Zusammenhang beschreiben",
+            "level": 3
+        },
+        "position": {
+            "x": 806.0,
+            "y": 657.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZFZP3.2.2C1_desc",
+            "label": "Wertepaare aufgrund von Funktionsgraphen bestimmen",
+            "level": 3
+        },
+        "position": {
+            "x": 919.0,
+            "y": 657.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZFZP3.2.2C2_desc",
+            "label": "die Abh\u00e4ngigkeit zwier Werte mit einem Funktionsgraphen darstellen sowie Graphenverl\u00e4ufe interpretieren",
+            "level": 3
+        },
+        "position": {
+            "x": 862.0,
+            "y": 666.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZFZP3.2.2D1_desc",
+            "label": "Funktionale Zusammenh\u00e4nge mit Sachsituationen, Wertetabellen, Graphen und Gleichungen beschreiben",
+            "level": 3
+        },
+        "position": {
+            "x": 944.0,
+            "y": 609.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZFZP3.2.2D2_desc",
+            "label": "Funktionen im Koordinatensystem mit geeigneter Skalierung darstellen",
+            "level": 3
+        },
+        "position": {
+            "x": 887.0,
+            "y": 529.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZFZP3.2.2E1_desc",
+            "label": "den Schnittpunkt zweier Geraden algebraisch und graphisch bestimmen\n\nzu linearen Funktionsgraphen die Steigung, den y-Achsenabschnitt, die Nullstelle und damit die Funktionsgleichung bestimmen",
+            "level": 3
+        },
+        "position": {
+            "x": 950.0,
+            "y": 544.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZFZP3.2.3",
+            "label": "Fragen zu funktionalen Zusammenh\u00e4ngen in Alltagssituationen stellen, diese beschreiben und darstellen",
+            "level": 2
+        },
+        "position": {
+            "x": 896.0,
+            "y": 383.75,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZFZP3.2.3B1_desc",
+            "label": "Behiehungen zwischen Werten erforschen und funktionale Zusammenh\u00e4nge \u00fcberpr\u00fcfen",
+            "level": 3
+        },
+        "position": {
+            "x": 928.0,
+            "y": 426.00000000000006,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZFZP3.2.3C1_desc",
+            "label": "funktionale Zusammenh\u00e4nge, insbesondere zu Preis-Leistung und Weg-Zeit, darstellen und begr\u00fcnden",
+            "level": 3
+        },
+        "position": {
+            "x": 947.0,
+            "y": 375.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZFZP3.2.3D1_desc",
+            "label": "Ergebnisse und Aussagen zu funktionalen Zusammenh\u00e4ngen \u00fcberpr\u00fcfen, insbesondere, durch Interpretation von Tabellen, Graphen und Diagrammen",
+            "level": 3
+        },
+        "position": {
+            "x": 907.0,
+            "y": 323.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "id": "GFDZFZP3.2.3E1_desc",
+            "label": "funktionale und statistische Zusammenh\u00e4nge erforschen, dazu Fragen stellen sowie Ergebnisse vergleichen",
+            "level": 3
+        },
+        "position": {
+            "x": 851.0,
+            "y": 366.0,
+            "locked": "true"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuV",
+            "target": "ZuVGaZ",
+            "id": "ZuV-ZuVGaZ"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGaZ",
+            "target": "ZuVGaZ1.1.1",
+            "id": "ZuVGaZ-ZuVGaZ1.1.1"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGaZ1.1.1",
+            "target": "ZuVGaZ1.1.1A1_desc",
+            "id": "ZuVGaZ1.1.1-ZuVGaZ1.1.1A1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGaZ1.1.1",
+            "target": "ZuVGaZ1.1.1A2_desc",
+            "id": "ZuVGaZ1.1.1-ZuVGaZ1.1.1A2_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGaZ1.1.1",
+            "target": "ZuVGaZ1.1.1B1_desc",
+            "id": "ZuVGaZ1.1.1-ZuVGaZ1.1.1B1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGaZ1.1.1",
+            "target": "ZuVGaZ1.1.1B2_desc",
+            "id": "ZuVGaZ1.1.1-ZuVGaZ1.1.1B2_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGaZ1.1.1",
+            "target": "ZuVGaZ1.1.1C1_desc",
+            "id": "ZuVGaZ1.1.1-ZuVGaZ1.1.1C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGaZ1.1.1",
+            "target": "ZuVGaZ1.1.1D1_desc",
+            "id": "ZuVGaZ1.1.1-ZuVGaZ1.1.1D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGaZ1.1.1",
+            "target": "ZuVGaZ1.1.1E1_desc",
+            "id": "ZuVGaZ1.1.1-ZuVGaZ1.1.1E1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGaZ",
+            "target": "ZuVGaZ1.1.2",
+            "id": "ZuVGaZ-ZuVGaZ1.1.2"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGaZ1.1.2",
+            "target": "ZuVGaZ1.1.2A1_desc",
+            "id": "ZuVGaZ1.1.2-ZuVGaZ1.1.2A1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGaZ1.1.2",
+            "target": "ZuVGaZ1.1.2B1_desc",
+            "id": "ZuVGaZ1.1.2-ZuVGaZ1.1.2B1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGaZ1.1.2",
+            "target": "ZuVGaZ1.1.2C1_desc",
+            "id": "ZuVGaZ1.1.2-ZuVGaZ1.1.2C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGaZ1.1.2",
+            "target": "ZuVGaZ1.1.2D1_desc",
+            "id": "ZuVGaZ1.1.2-ZuVGaZ1.1.2D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGaZ1.1.2",
+            "target": "ZuVGaZ1.1.2E1_desc",
+            "id": "ZuVGaZ1.1.2-ZuVGaZ1.1.2E1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGaZ",
+            "target": "ZuVGaZ1.1.3",
+            "id": "ZuVGaZ-ZuVGaZ1.1.3"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGaZ1.1.3",
+            "target": "ZuVGaZ1.1.3A1_desc",
+            "id": "ZuVGaZ1.1.3-ZuVGaZ1.1.3A1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGaZ1.1.3",
+            "target": "ZuVGaZ1.1.3A2_desc",
+            "id": "ZuVGaZ1.1.3-ZuVGaZ1.1.3A2_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGaZ1.1.3",
+            "target": "ZuVGaZ1.1.3B1_desc",
+            "id": "ZuVGaZ1.1.3-ZuVGaZ1.1.3B1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGaZ1.1.3",
+            "target": "ZuVGaZ1.1.3C1_desc",
+            "id": "ZuVGaZ1.1.3-ZuVGaZ1.1.3C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGaZ1.1.3",
+            "target": "ZuVGaZ1.1.3D1_desc",
+            "id": "ZuVGaZ1.1.3-ZuVGaZ1.1.3D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuV",
+            "target": "ZuVGeZ",
+            "id": "ZuV-ZuVGeZ"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGeZ",
+            "target": "ZuVGeZ1.2.1",
+            "id": "ZuVGeZ-ZuVGeZ1.2.1"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGeZ1.2.1",
+            "target": "ZuVGeZ1.2.1A1_desc",
+            "id": "ZuVGeZ1.2.1-ZuVGeZ1.2.1A1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGeZ1.2.1",
+            "target": "ZuVGeZ1.2.1A2_desc",
+            "id": "ZuVGeZ1.2.1-ZuVGeZ1.2.1A2_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGeZ1.2.1",
+            "target": "ZuVGeZ1.2.1B1_desc",
+            "id": "ZuVGeZ1.2.1-ZuVGeZ1.2.1B1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGeZ1.2.1",
+            "target": "ZuVGeZ1.2.1C1_desc",
+            "id": "ZuVGeZ1.2.1-ZuVGeZ1.2.1C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGeZ1.2.1",
+            "target": "ZuVGeZ1.2.1D1_desc",
+            "id": "ZuVGeZ1.2.1-ZuVGeZ1.2.1D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGeZ",
+            "target": "ZuVGeZ1.2.2",
+            "id": "ZuVGeZ-ZuVGeZ1.2.2"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGeZ1.2.2",
+            "target": "ZuVGeZ1.2.2A1_desc",
+            "id": "ZuVGeZ1.2.2-ZuVGeZ1.2.2A1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGeZ1.2.2",
+            "target": "ZuVGeZ1.2.2B1_desc",
+            "id": "ZuVGeZ1.2.2-ZuVGeZ1.2.2B1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGeZ1.2.2",
+            "target": "ZuVGeZ1.2.2C1_desc",
+            "id": "ZuVGeZ1.2.2-ZuVGeZ1.2.2C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGeZ1.2.2",
+            "target": "ZuVGeZ1.2.2D1_desc",
+            "id": "ZuVGeZ1.2.2-ZuVGeZ1.2.2D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGeZ",
+            "target": "ZuVGeZ1.2.3",
+            "id": "ZuVGeZ-ZuVGeZ1.2.3"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGeZ1.2.3",
+            "target": "ZuVGeZ1.2.3A1_desc",
+            "id": "ZuVGeZ1.2.3-ZuVGeZ1.2.3A1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGeZ1.2.3",
+            "target": "ZuVGeZ1.2.3B1_desc",
+            "id": "ZuVGeZ1.2.3-ZuVGeZ1.2.3B1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGeZ1.2.3",
+            "target": "ZuVGeZ1.2.3B2_desc",
+            "id": "ZuVGeZ1.2.3-ZuVGeZ1.2.3B2_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGeZ1.2.3",
+            "target": "ZuVGeZ1.2.3C1_desc",
+            "id": "ZuVGeZ1.2.3-ZuVGeZ1.2.3C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGeZ1.2.3",
+            "target": "ZuVGeZ1.2.3D1_desc",
+            "id": "ZuVGeZ1.2.3-ZuVGeZ1.2.3D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGeZ",
+            "target": "ZuVGeZ1.2.4",
+            "id": "ZuVGeZ-ZuVGeZ1.2.4"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGeZ1.2.4",
+            "target": "ZuVGeZ1.2.4A1_desc",
+            "id": "ZuVGeZ1.2.4-ZuVGeZ1.2.4A1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGeZ1.2.4",
+            "target": "ZuVGeZ1.2.4B1_desc",
+            "id": "ZuVGeZ1.2.4-ZuVGeZ1.2.4B1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGeZ1.2.4",
+            "target": "ZuVGeZ1.2.4C1_desc",
+            "id": "ZuVGeZ1.2.4-ZuVGeZ1.2.4C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVGeZ1.2.4",
+            "target": "ZuVGeZ1.2.4D1_desc",
+            "id": "ZuVGeZ1.2.4-ZuVGeZ1.2.4D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuV",
+            "target": "ZuVAl",
+            "id": "ZuV-ZuVAl"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVAl",
+            "target": "ZuVAl1.3.1",
+            "id": "ZuVAl-ZuVAl1.3.1"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVAl1.3.1",
+            "target": "ZuVAl1.3.1A1_desc",
+            "id": "ZuVAl1.3.1-ZuVAl1.3.1A1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVAl1.3.1",
+            "target": "ZuVAl1.3.1B1_desc",
+            "id": "ZuVAl1.3.1-ZuVAl1.3.1B1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVAl1.3.1",
+            "target": "ZuVAl1.3.1C1_desc",
+            "id": "ZuVAl1.3.1-ZuVAl1.3.1C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVAl1.3.1",
+            "target": "ZuVAl1.3.1D1_desc",
+            "id": "ZuVAl1.3.1-ZuVAl1.3.1D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVAl1.3.1",
+            "target": "ZuVAl1.3.1E1_desc",
+            "id": "ZuVAl1.3.1-ZuVAl1.3.1E1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVAl",
+            "target": "ZuVAl1.3.2",
+            "id": "ZuVAl-ZuVAl1.3.2"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVAl1.3.2",
+            "target": "ZuVAl1.3.2A1_desc",
+            "id": "ZuVAl1.3.2-ZuVAl1.3.2A1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVAl1.3.2",
+            "target": "ZuVAl1.3.2B1_desc",
+            "id": "ZuVAl1.3.2-ZuVAl1.3.2B1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVAl1.3.2",
+            "target": "ZuVAl1.3.2C1_desc",
+            "id": "ZuVAl1.3.2-ZuVAl1.3.2C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVAl1.3.2",
+            "target": "ZuVAl1.3.2D1_desc",
+            "id": "ZuVAl1.3.2-ZuVAl1.3.2D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVAl1.3.2",
+            "target": "ZuVAl1.3.2E1_desc",
+            "id": "ZuVAl1.3.2-ZuVAl1.3.2E1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVAl1.3.2",
+            "target": "ZuVAl1.3.2E2_desc",
+            "id": "ZuVAl1.3.2-ZuVAl1.3.2E2_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVAl",
+            "target": "ZuVAl1.3.3",
+            "id": "ZuVAl-ZuVAl1.3.3"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVAl1.3.3",
+            "target": "ZuVAl1.3.3A1_desc",
+            "id": "ZuVAl1.3.3-ZuVAl1.3.3A1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVAl1.3.3",
+            "target": "ZuVAl1.3.3B1_desc",
+            "id": "ZuVAl1.3.3-ZuVAl1.3.3B1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVAl1.3.3",
+            "target": "ZuVAl1.3.3C1_desc",
+            "id": "ZuVAl1.3.3-ZuVAl1.3.3C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVAl1.3.3",
+            "target": "ZuVAl1.3.3D1_desc",
+            "id": "ZuVAl1.3.3-ZuVAl1.3.3D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "ZuVAl1.3.3",
+            "target": "ZuVAl1.3.3E1_desc",
+            "id": "ZuVAl1.3.3-ZuVAl1.3.3E1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuR",
+            "target": "FuRGdE",
+            "id": "FuR-FuRGdE"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE",
+            "target": "FuRGdE2.1.1",
+            "id": "FuRGdE-FuRGdE2.1.1"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.1",
+            "target": "FuRGdE2.1.1A1_desc",
+            "id": "FuRGdE2.1.1-FuRGdE2.1.1A1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.1",
+            "target": "FuRGdE2.1.1B1_desc",
+            "id": "FuRGdE2.1.1-FuRGdE2.1.1B1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.1",
+            "target": "FuRGdE2.1.1B2_desc",
+            "id": "FuRGdE2.1.1-FuRGdE2.1.1B2_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.1",
+            "target": "FuRGdE2.1.1C1_desc",
+            "id": "FuRGdE2.1.1-FuRGdE2.1.1C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.1",
+            "target": "FuRGdE2.1.1C2_desc",
+            "id": "FuRGdE2.1.1-FuRGdE2.1.1C2_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.1",
+            "target": "FuRGdE2.1.1D1_desc",
+            "id": "FuRGdE2.1.1-FuRGdE2.1.1D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.1",
+            "target": "FuRGdE2.1.1E1_desc",
+            "id": "FuRGdE2.1.1-FuRGdE2.1.1E1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE",
+            "target": "FuRGdE2.1.2",
+            "id": "FuRGdE-FuRGdE2.1.2"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.2",
+            "target": "FuRGdE2.1.2A1_desc",
+            "id": "FuRGdE2.1.2-FuRGdE2.1.2A1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.2",
+            "target": "FuRGdE2.1.2B1_desc",
+            "id": "FuRGdE2.1.2-FuRGdE2.1.2B1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.2",
+            "target": "FuRGdE2.1.2C1_desc",
+            "id": "FuRGdE2.1.2-FuRGdE2.1.2C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.2",
+            "target": "FuRGdE2.1.2C2_desc",
+            "id": "FuRGdE2.1.2-FuRGdE2.1.2C2_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.2",
+            "target": "FuRGdE2.1.2D1_desc",
+            "id": "FuRGdE2.1.2-FuRGdE2.1.2D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.2",
+            "target": "FuRGdE2.1.2D2_desc",
+            "id": "FuRGdE2.1.2-FuRGdE2.1.2D2_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.2",
+            "target": "FuRGdE2.1.2E1_desc",
+            "id": "FuRGdE2.1.2-FuRGdE2.1.2E1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE",
+            "target": "FuRGdE2.1.3",
+            "id": "FuRGdE-FuRGdE2.1.3"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.3",
+            "target": "FuRGdE2.1.3A1_desc",
+            "id": "FuRGdE2.1.3-FuRGdE2.1.3A1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.3",
+            "target": "FuRGdE2.1.3B1_desc",
+            "id": "FuRGdE2.1.3-FuRGdE2.1.3B1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.3",
+            "target": "FuRGdE2.1.3C1_desc",
+            "id": "FuRGdE2.1.3-FuRGdE2.1.3C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.3",
+            "target": "FuRGdE2.1.3C2_desc",
+            "id": "FuRGdE2.1.3-FuRGdE2.1.3C2_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.3",
+            "target": "FuRGdE2.1.3D1_desc",
+            "id": "FuRGdE2.1.3-FuRGdE2.1.3D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.3",
+            "target": "FuRGdE2.1.3E1_desc",
+            "id": "FuRGdE2.1.3-FuRGdE2.1.3E1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE",
+            "target": "FuRGdE2.1.4",
+            "id": "FuRGdE-FuRGdE2.1.4"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.4",
+            "target": "FuRGdE2.1.4A1_desc",
+            "id": "FuRGdE2.1.4-FuRGdE2.1.4A1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.4",
+            "target": "FuRGdE2.1.4B1_desc",
+            "id": "FuRGdE2.1.4-FuRGdE2.1.4B1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.4",
+            "target": "FuRGdE2.1.4C1_desc",
+            "id": "FuRGdE2.1.4-FuRGdE2.1.4C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.4",
+            "target": "FuRGdE2.1.4D1_desc",
+            "id": "FuRGdE2.1.4-FuRGdE2.1.4D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.4",
+            "target": "FuRGdE2.1.4D2_desc",
+            "id": "FuRGdE2.1.4-FuRGdE2.1.4D2_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGdE2.1.4",
+            "target": "FuRGdE2.1.4E1_desc",
+            "id": "FuRGdE2.1.4-FuRGdE2.1.4E1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuR",
+            "target": "FuRGiR",
+            "id": "FuR-FuRGiR"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGiR",
+            "target": "FuRGiR2.2.1",
+            "id": "FuRGiR-FuRGiR2.2.1"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGiR2.2.1",
+            "target": "FuRGiR2.2.1A1_desc",
+            "id": "FuRGiR2.2.1-FuRGiR2.2.1A1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGiR2.2.1",
+            "target": "FuRGiR2.2.1B1_desc",
+            "id": "FuRGiR2.2.1-FuRGiR2.2.1B1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGiR2.2.1",
+            "target": "FuRGiR2.2.1C1_desc",
+            "id": "FuRGiR2.2.1-FuRGiR2.2.1C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGiR2.2.1",
+            "target": "FuRGiR2.2.1D1_desc",
+            "id": "FuRGiR2.2.1-FuRGiR2.2.1D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGiR2.2.1",
+            "target": "FuRGiR2.2.1E1_desc",
+            "id": "FuRGiR2.2.1-FuRGiR2.2.1E1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGiR",
+            "target": "FuRGiR2.2.2",
+            "id": "FuRGiR-FuRGiR2.2.2"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGiR2.2.2",
+            "target": "FuRGiR2.2.2A1_desc",
+            "id": "FuRGiR2.2.2-FuRGiR2.2.2A1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGiR2.2.2",
+            "target": "FuRGiR2.2.2B1_desc",
+            "id": "FuRGiR2.2.2-FuRGiR2.2.2B1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGiR2.2.2",
+            "target": "FuRGiR2.2.2C1_desc",
+            "id": "FuRGiR2.2.2-FuRGiR2.2.2C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGiR2.2.2",
+            "target": "FuRGiR2.2.2D1_desc",
+            "id": "FuRGiR2.2.2-FuRGiR2.2.2D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGiR",
+            "target": "FuRGiR2.2.3",
+            "id": "FuRGiR-FuRGiR2.2.3"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGiR2.2.3",
+            "target": "FuRGiR2.2.3A1_desc",
+            "id": "FuRGiR2.2.3-FuRGiR2.2.3A1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGiR2.2.3",
+            "target": "FuRGiR2.2.3B1_desc",
+            "id": "FuRGiR2.2.3-FuRGiR2.2.3B1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGiR2.2.3",
+            "target": "FuRGiR2.2.3C1_desc",
+            "id": "FuRGiR2.2.3-FuRGiR2.2.3C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGiR2.2.3",
+            "target": "FuRGiR2.2.3D1_desc",
+            "id": "FuRGiR2.2.3-FuRGiR2.2.3D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "FuRGiR2.2.3",
+            "target": "FuRGiR2.2.3E1_desc",
+            "id": "FuRGiR2.2.3-FuRGiR2.2.3E1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZ",
+            "target": "GFDZGuM",
+            "id": "GFDZ-GFDZGuM"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZGuM",
+            "target": "GFDZGuM3.1.1",
+            "id": "GFDZGuM-GFDZGuM3.1.1"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZGuM3.1.1",
+            "target": "GFDZGuM3.1.1A1_desc",
+            "id": "GFDZGuM3.1.1-GFDZGuM3.1.1A1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZGuM3.1.1",
+            "target": "GFDZGuM3.1.1B1_desc",
+            "id": "GFDZGuM3.1.1-GFDZGuM3.1.1B1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZGuM3.1.1",
+            "target": "GFDZGuM3.1.1C1_desc",
+            "id": "GFDZGuM3.1.1-GFDZGuM3.1.1C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZGuM3.1.1",
+            "target": "GFDZGuM3.1.1D1_desc",
+            "id": "GFDZGuM3.1.1-GFDZGuM3.1.1D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZGuM",
+            "target": "GFDZGuM3.1.2",
+            "id": "GFDZGuM-GFDZGuM3.1.2"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZGuM3.1.2",
+            "target": "GFDZGuM3.1.2A1_desc",
+            "id": "GFDZGuM3.1.2-GFDZGuM3.1.2A1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZGuM3.1.2",
+            "target": "GFDZGuM3.1.2B1_desc",
+            "id": "GFDZGuM3.1.2-GFDZGuM3.1.2B1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZGuM3.1.2",
+            "target": "GFDZGuM3.1.2C1_desc",
+            "id": "GFDZGuM3.1.2-GFDZGuM3.1.2C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZGuM3.1.2",
+            "target": "GFDZGuM3.1.2C2_desc",
+            "id": "GFDZGuM3.1.2-GFDZGuM3.1.2C2_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZGuM3.1.2",
+            "target": "GFDZGuM3.1.2D1_desc",
+            "id": "GFDZGuM3.1.2-GFDZGuM3.1.2D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZGuM",
+            "target": "GFDZGuM3.1.3",
+            "id": "GFDZGuM-GFDZGuM3.1.3"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZGuM3.1.3",
+            "target": "GFDZGuM3.1.3E1_desc",
+            "id": "GFDZGuM3.1.3-GFDZGuM3.1.3E1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZGuM3.1.3",
+            "target": "GFDZGuM3.1.3A1_desc",
+            "id": "GFDZGuM3.1.3-GFDZGuM3.1.3A1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZGuM3.1.3",
+            "target": "GFDZGuM3.1.3B1_desc",
+            "id": "GFDZGuM3.1.3-GFDZGuM3.1.3B1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZGuM3.1.3",
+            "target": "GFDZGuM3.1.3C1_desc",
+            "id": "GFDZGuM3.1.3-GFDZGuM3.1.3C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZGuM3.1.3",
+            "target": "GFDZGuM3.1.3D1_desc",
+            "id": "GFDZGuM3.1.3-GFDZGuM3.1.3D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZ",
+            "target": "GFDZFZP",
+            "id": "GFDZ-GFDZFZP"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZFZP",
+            "target": "GFDZFZP3.2.1",
+            "id": "GFDZFZP-GFDZFZP3.2.1"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZFZP3.2.1",
+            "target": "GFDZFZP3.2.1A1_desc",
+            "id": "GFDZFZP3.2.1-GFDZFZP3.2.1A1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZFZP3.2.1",
+            "target": "GFDZFZP3.2.1B1_desc",
+            "id": "GFDZFZP3.2.1-GFDZFZP3.2.1B1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZFZP3.2.1",
+            "target": "GFDZFZP3.2.1C1_desc",
+            "id": "GFDZFZP3.2.1-GFDZFZP3.2.1C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZFZP3.2.1",
+            "target": "GFDZFZP3.2.1D1_desc",
+            "id": "GFDZFZP3.2.1-GFDZFZP3.2.1D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZFZP3.2.1",
+            "target": "GFDZFZP3.2.1E1_desc",
+            "id": "GFDZFZP3.2.1-GFDZFZP3.2.1E1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZFZP",
+            "target": "GFDZFZP3.2.2",
+            "id": "GFDZFZP-GFDZFZP3.2.2"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZFZP3.2.2",
+            "target": "GFDZFZP3.2.2A1_desc",
+            "id": "GFDZFZP3.2.2-GFDZFZP3.2.2A1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZFZP3.2.2",
+            "target": "GFDZFZP3.2.2B2_desc",
+            "id": "GFDZFZP3.2.2-GFDZFZP3.2.2B2_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZFZP3.2.2",
+            "target": "GFDZFZP3.2.2C1_desc",
+            "id": "GFDZFZP3.2.2-GFDZFZP3.2.2C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZFZP3.2.2",
+            "target": "GFDZFZP3.2.2C2_desc",
+            "id": "GFDZFZP3.2.2-GFDZFZP3.2.2C2_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZFZP3.2.2",
+            "target": "GFDZFZP3.2.2D1_desc",
+            "id": "GFDZFZP3.2.2-GFDZFZP3.2.2D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZFZP3.2.2",
+            "target": "GFDZFZP3.2.2D2_desc",
+            "id": "GFDZFZP3.2.2-GFDZFZP3.2.2D2_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZFZP3.2.2",
+            "target": "GFDZFZP3.2.2E1_desc",
+            "id": "GFDZFZP3.2.2-GFDZFZP3.2.2E1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZFZP",
+            "target": "GFDZFZP3.2.3",
+            "id": "GFDZFZP-GFDZFZP3.2.3"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZFZP3.2.3",
+            "target": "GFDZFZP3.2.3B1_desc",
+            "id": "GFDZFZP3.2.3-GFDZFZP3.2.3B1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZFZP3.2.3",
+            "target": "GFDZFZP3.2.3C1_desc",
+            "id": "GFDZFZP3.2.3-GFDZFZP3.2.3C1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZFZP3.2.3",
+            "target": "GFDZFZP3.2.3D1_desc",
+            "id": "GFDZFZP3.2.3-GFDZFZP3.2.3D1_desc"
+        }
+    },
+    {
+        "data": {
+            "source": "GFDZFZP3.2.3",
+            "target": "GFDZFZP3.2.3E1_desc",
+            "id": "GFDZFZP3.2.3-GFDZFZP3.2.3E1_desc"
+        }
+    }
+]

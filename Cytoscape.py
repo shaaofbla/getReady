@@ -1,5 +1,5 @@
 from dash import Dash, html, dcc, Input, Output, ctx, callback
-import dash_bootstrap_components as dbcp
+import dash_mantine_components as dmc
 import dash_cytoscape as cyto
 import xlwings as xw
 import json
@@ -17,7 +17,7 @@ file.close()
 def parseRaster(data, profile, nodesPositions):
     maxRows = getMaxRows(data)
     nodes = getNodes(data, maxRows, profile, nodesPositions)
-    print(nodes)
+    #print(nodes)
     edges = getEdges(data, maxRows, profile)
     return nodes + edges
 
@@ -25,8 +25,8 @@ def getNodes(data, maxRows, profile, nodePositions):
     nodeSet = {}
     for i in range(1,maxRows):
         for j in range(4):
-            label = data[i,4*j].value
-            id = data[i,4*j+1].value
+            label = data[i,2*j].value
+            id = data[i,2*j+1].value
 
             if (id not in nodeSet and id not in profile):
                 position = nodePositions[id]
@@ -46,8 +46,8 @@ def getEdges(data, maxRows, profile):
     edgeSet = {}
     for i in range(1,maxRows):
         for j in range(3):
-            id_source = data[i,4*j+1].value
-            id_target = data[i,4*j+5].value
+            id_source = data[i,2*j+1].value
+            id_target = data[i,2*j+3].value
             id = str(id_source)+ "-"+str(id_target)
             if (id not in edgeSet and id_target not in profile):
                 edgeSet[id] = {'source': id_source, 'target': id_target}
@@ -59,7 +59,6 @@ def getEdges(data, maxRows, profile):
             'data': edgeSet[key]
             }
         )
-    #print(edges)
     return edges
 
 def parseProfiles(data):
@@ -87,9 +86,17 @@ def getMaxRows(data):
         i += 1
     return(i-1)
 
-profiles = parseProfiles(sheetProfiles)
+#pyprofiles = parseProfiles(sheetProfiles)
 #profiles = []
+
+with open("mathTargetsElements.json", "r") as file:
+    elements = json.load(file)
+"""    
 elements = parseRaster(sheetRaster, profiles, nodePositions)
+with open("mathelementsWorking.json","w") as file:
+    json.dump(elements,file, indent=4)
+"""
+
 #elements = cyto.filter('[id *="ZuV"]')
 
 #filterElementsByProfile(elements, elementsNotInProfile)
@@ -109,21 +116,42 @@ server = app.server
 with open('stylesheet.json','r') as file:
     stylesheet=json.load(file)
 
-app.layout = html.Div([
-    html.Div(className = 'eight columns', children=[
-        cyto.Cytoscape(
-            id='cytoscape-image-export',
-            layout={
-                'name': 'preset',
-                    },
-            style={'width': '1000px', 'height': '707px'},
-            elements= elements,
-            stylesheet=stylesheet
-        ),
-        html.P(id='cytoscape-tapNodeData-output'),
-        html.P(id='cytoscape-selectedNodeData-output')
-    ])
-])
+app.layout = dmc.MantineProvider([
+    dmc.Title("Berufsexplorer"),
+    dmc.Grid(
+        children = [
+            dmc.Col(        
+                html.Div([
+                    cyto.Cytoscape(
+                        id='cytoscape-view',
+                        layout={
+                            'name': 'preset',
+                                },
+                        style={'width': 'auto', 'height': '707px'},
+                        elements= elements,
+                        stylesheet=stylesheet
+                    ),
+                    html.P(id='cytoscape-tapNodeData-output'),
+                    html.P(id='cytoscape-selectedNodeData-output') 
+                ]), span = 8
+            ),
+            dmc.Col(
+                dmc.Select(
+                    label="Beruf",
+                    placeholder="Wähle einen Beruf",
+                    id="profile-select",
+                    value="all",
+                    data=[
+                        {"value": "automobilAs","label":"Automobilassistent"},
+                        {"value": "detailhandelAs", "label": "Detailhandelsassistent"},
+                        {"value": "all", "label": "Alle Lernziele anzeigen"}
+                    ]
+                ), span = 4
+            ),
+        ], gutter="xl",
+    )
+]
+)
 """
 html.Div(className='four columns', children=[
     dcc.Tabs(id='tabs-image-export', children=[
@@ -145,8 +173,14 @@ html.Div(className='four columns', children=[
 ])
 """
 
+@callback(
+    Output('cytoscape-view', 'elements'),
+    Input('profile-select', 'value')
+)
 
-
+def select_profile(data):
+    print("this is from the select profile callback: ")
+    print(data)
 
 """
 @callback(
@@ -180,5 +214,4 @@ def get_image(tab, get_jpg_clicks, get_png_clicks, get_svg_clicks):
 
 if __name__ == '__main__':
     app.run(debug=True)
-    #parseRaster(sheetRaster,[])
-    pass
+    
