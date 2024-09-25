@@ -49,27 +49,113 @@ app.layout = dmc.MantineProvider([
                 ]), span = 8
             ),
             dmc.Col(
-                dmc.Select(
-                    label="Beruf",
-                    placeholder="Wähle einen Beruf",
-                    id="profile-select",
-                    value="all",
-                    data=profilesLabelsSelectData
+                dmc.Tabs(
+                    [
+                        dmc.TabsList(
+                            [
+                                dmc.Tab("Explorer", value="explorer"),
+                                dmc.Tab("Compare", value="compare")
+                            ]
+                        ),
+                        dmc.TabsPanel(
+                                dmc.Select(
+                                label="Beruf",
+                                placeholder="Wähle einen Beruf",
+                                id="profile-select",
+                                value="all",
+                                data=profilesLabelsSelectData
+                                ),value = "explorer"
+                        ),
+                        dmc.TabsPanel(
+                            [
+                                dmc.Select(
+                                label="Berufsprofil A",
+                                placeholder="Berufsprofil A",
+                                id="profile-selectA",
+                                value="all",
+                                data=profilesLabelsSelectData
+                                ),
+                                dmc.Select(
+                                label="Berufsprofil B",
+                                placeholder="Berufsprofil B",
+                                id="profile-selectB",
+                                value="all",
+                                data=profilesLabelsSelectData
+                                ),
+                            ], value = "compare"
+
+                        )
+                    ], 
+                    color="red",
+                    orientation="horizontal",
                 ), span = 4
             ),
         ], gutter="xl",
     )
 ]
 )
+@callback(
+    Output('cytoscape-view', 'elements', allow_duplicate=True),
+    Input('profile-selectA','value'),
+    Input('profile-selectB', 'value'),
+    prevent_initial_call = True
+)
+def compare_profiles(value1, value2):
+    innerNodes = [] 
+    leafNodes = {}
+    edges = {}
+    profiles = {}
+    # Extract data from elements
+    for element in default_elements:
+        if 'position' in element:
+            if (element['data']['level']) == 3:
+                profiles[element['data']['id']] = element['data']['profile']
+                leafNodes[element['data']['id']] = element
+            else:
+                innerNodes.append(element)
+        else:
+            edges[element['data']['target']] = element
+    
+    #Check profile
+    new_elements = innerNodes
+    removed_elements = []
+    for id in profiles:
+        if (value1 in profiles[id] and value2 in profiles[id]):
+            print("add to profileAB:")
+            leafNodes[id]['data']['classes'] = "both"
+            print(leafNodes[id])
+            print("\n")
+            new_elements.append(leafNodes[id])
+        elif (value1 in profiles[id]):
+            print("add to profile A")
+            leafNodes[id]['data']['classes'] = "A"
+            print(leafNodes[id])
+            new_elements.append(leafNodes[id])
+            print("\n")
+        elif (value2 in profiles[id]):
+            print("add to profile B")
+            leafNodes[id]['data']['classes'] = "B"
+            print(leafNodes[id])
+            new_elements.append(leafNodes[id])
+            print("\n")
+        else:
+            removed_elements.append(leafNodes[id])
+
+    for node in removed_elements:
+        edges.pop(node['data']['id'])
+
+    for edge in edges:
+        new_elements.append(edges[edge]) 
+
+    return new_elements
+
 
 @callback(
     Output('cytoscape-view', 'elements'),
     Input('profile-select', 'value'),
+    prevent_initial_call = True
 )
-
 def select_profile(value):
-    print(len(default_elements))
-    print(default_elements[-1])
     if value == "all":
         return default_elements
     
@@ -94,16 +180,11 @@ def select_profile(value):
                 removed_elements.append(node)
 
     for node in removed_elements:
-        print(node['data']['id'])
         edges.pop(node['data']['id'])
 
-    print(edges)
     for edge in edges:
-        print(edge)
         new_elements.append(edges[edge])
-    #print(new_elements)
     return new_elements
-
 
 if __name__ == '__main__':
     app.run(debug=True)

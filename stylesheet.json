@@ -108,7 +108,25 @@
     {
         "selector": "edge",
         "style" : {
-            "curve-style": "segment"
+            "curve-style": "unbundled-bezier"
+        }
+    },
+    {
+        "selector": "[classes *= 'A']",
+        "style" : {
+            "background-color": "#3CAEA3"
+        }
+    },
+    {
+        "selector": "[classes *= 'both']",
+        "style" : {
+            "background-color": "#F6D55C"
+        }
+    },
+    {
+        "selector": "[classes *= 'B']",
+        "style" : {
+            "background-color": "#ED553B"
         }
     }
 
