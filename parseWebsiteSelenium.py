@@ -1,5 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoSuchElementException
 
 # Set up the WebDriver (e.g., using Chrome)
 driver = webdriver.Firefox()
@@ -7,24 +8,36 @@ driver = webdriver.Firefox()
 driver.implicitly_wait(2)
 
 
-def compileIdFromString(Str):
-    words = Str.split(" ")
+def compileIdFromString(text):
+    text = text.replace("(","")
+    text = text.replace(")","")
+    words = text.split(" ")
     id = str()
     for word in words:
         id = id + word[0]
+        
+    if id == 'GZ':
+        id = words[0][0:2]+words[1][0]
+
     return id
 
 def parseMathTargets():
+    letters = {
+            0: "A",
+            1: "B",
+            2: "C",
+            3: "D",
+            4: "E"
+        }
     try:
         driver.get('https://app-p-kompetenzraster.azurewebsites.net/#/professionspublic/0ea79c50-f9dc-4760-b725-b357135d3db6')
         content = driver.find_elements("class name","theme-container")
 
         for container in content:
             thema = container.find_element("class name", "theme-name")
-            themaName = thema.text
-            print(themaName)
-            id_level1 = compileIdFromString(themaName)
-            print(id_level1)
+            label_level0 = thema.text
+            id_level0 = compileIdFromString(label_level0)
+            print(id_level0)
             subTables = container.find_elements("tag name", "table")
             #html = thema.get_attribute('innerHTML')
             #print(html)
@@ -32,21 +45,40 @@ def parseMathTargets():
             
             for table in subTables:                
                 area = table.find_element("class name", "areaTitle")
-                areaText = area.find_element("tag name", "td").text
-                print("\t"+areaText)
-                id_level2 = compileIdFromString(areaText)
-                print("\t"+id_level1+id_level2)
+                label_level1 = area.find_element("tag name", "td").text
+                print("\t"+label_level1)
+                id_level1 = compileIdFromString(label_level1)
+                id_level1_con = id_level0 + id_level1
+                print("\t"+id_level0+id_level1)
                 rows = table.find_elements("tag name", "tr")
-                rows = rows[1:-1] # get rid of first element, its the area Title
+                rows.pop(0) # get rid of first element, its the area Title
+                """
+                ## Get row Names
                 for row in rows:
-                    columns = row.find_element("tag name", "td")
-                    print(columns.get_attribute('innerHTML'))
+                    rowName = row.find_element("tag name", "td")
+                    #print(rowName.get_attribute('innerHTML'))
+                    rowName = rowName.find_elements("tag name", "span")
+                    id_level2 = rowName[0].text
+                    id_level2_con = id_level1_con + id_level2
+                    label_level2 = rowName[1].text
+                    print("\t\t"+id_level2_con)
+                    print("\t\t"+label_level2)
+                
+                ## Get Row Elements
+                for row in rows:
+                    elements = row.find_elements("tag name", "td")
+                    elements.pop(0) #Get rid of row name
+                    print(len(elements))
+                    for i, element in enumerate(elements):
+                        try:
+                            label_level3 = element.find_element("class name", "ng-binding")
+                            id_level3 = letters[i]
+                            id_level3_con = id_level2_con+id_level3
+                            print("\t\t\t"+id_level3_con+" "+label_level3.text)
+                        except NoSuchElementException:
+                            print("No Element found..")                            
+                """
                 print(len(rows))
-
-
-            
-
-
 
     finally:
         print("closing...")
