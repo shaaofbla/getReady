@@ -15,7 +15,7 @@
         }
     },
     {
-        "selector": "[id *= 'A1_'],[id *= 'A2_']",
+        "selector": "[id *= 'A1'],[id *= 'A2']",
         "style": {
             "content": "data(label)",
             "border-color": "#173F5F",
@@ -25,7 +25,7 @@
         }
     },
     {
-        "selector": "[id *= 'B1_'],[id *= 'B2_']",
+        "selector": "[id *= 'B1'],[id *= 'B2']",
         "style": {
             "content": "data(label)",
             "border-color": "#20639B",
@@ -36,7 +36,7 @@
         }
     },
     {
-        "selector": "[id *= 'C1_'],[id *= 'C2_']",
+        "selector": "[id *= 'C1'],[id *= 'C2']",
         "style": {
             "content": "data(label)",
             "border-color": "#3CAEA3",
@@ -47,7 +47,7 @@
         }
     },
     {
-        "selector": "[id *= 'D1_'],[id *= 'D2_']",
+        "selector": "[id *= 'D1'],[id *= 'D2']",
         "style": {
             "content": "data(label)",
             "border-color": "#F6D55C",
@@ -58,7 +58,7 @@
         }
     },
     {
-        "selector": "[id *= 'E1_'],[id *= 'E2_']",
+        "selector": "[id *= 'E1'],[id *= 'E2']",
         "style": {
             "content": "data(label)",
             "border-color": "#ED553B",
@@ -83,7 +83,7 @@
         }
     },
     {
-        "selector": "[id *= 'GFDZ']",
+        "selector": "[id *= 'GFDuZ']",
         "style": {
             "background-color": "#FFCE5C",
             "shape": "rectangle"
@@ -108,7 +108,7 @@
     {
         "selector": "edge",
         "style" : {
-            "curve-style": "unbundled-bezier"
+            "curve-style": "straight-triangle"
         }
     },
     {

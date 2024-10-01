@@ -1,14 +1,13 @@
 from dash import Dash, html, dcc, Input, Output, State, ctx, callback
 import dash_mantine_components as dmc
 import dash_cytoscape as cyto
-import xlwings as xw
 import json
 
 cyto.load_extra_layouts()
 
 
 
-with open("mathTargetsElements.json", "r") as file:
+with open("mathTargetsElementsScrabbed.json", "r") as file:
     default_elements = json.load(file)
 
 
@@ -38,7 +37,7 @@ app.layout = dmc.MantineProvider([
                         id='cytoscape-view',
                         layout={
                             'name': 'preset',
-                            'animate': 'true'
+                            'animate': True
                                 },
                         style={'width': 'auto', 'height': '707px'},
                         elements= default_elements,
