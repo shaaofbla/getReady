@@ -32,6 +32,7 @@ correct = 0
 for i, element in enumerate(elements):
     if element['type'] == "node":
         #print(element)
+        # Update labels
         writtenLabel = element['data']['label']
         id = element['data']['id']
         scrabbedLabel = nodeLabels[id]
@@ -42,18 +43,21 @@ for i, element in enumerate(elements):
             print(f"replace: {writtenLabel}")
             print(f"with: {scrabbedLabel}")
             elements[i]['data']['label'] = scrabbedLabel
-        nodeLabels.pop(id)   
-print(nodeLabels)
+        nodeLabels.pop(id)
+        # Update profiles
+        if (element['data']['level']==3):
+            elements[i]['data']['profile'] = profiles[id]
+#print(nodeLabels)
 
 for id, label in nodeLabels.items():
-    print(label)
-    print(id)
+#    print(label)
+ #   print(id)
     nodeData = {
         "data": {
             "id": id,
             "label": label,
             "level": 3,
-            "profile": []
+            "profile": profiles[id]
 
         },
         "position": {
@@ -72,13 +76,15 @@ for id, label in nodeLabels.items():
     }
     elements.append(nodeData)
     elements.append(edgeData)
-    print(nodeData)
-    print(edgeData)
-"""
+#    print(nodeData)
+#    print(edgeData)
+
+#print(profiles)
+print(elements)
+
 with open("mathTargetsElementsScrabbed.json", "w") as outfile:
     json.dump(elements, outfile, indent=4)
 outfile.close() 
-"""
 #print(correct)
 
 #print(elements)

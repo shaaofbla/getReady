@@ -1,39 +1,66 @@
-from dash import Dash, html, dash_table, dcc, callback, Output, Input
-import pandas as pd
-import plotly.express as px
+from dash import Dash, html, Input, Output, State
 import dash_mantine_components as dmc
+import dash 
 
-df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminder2007.csv')
+app = Dash(__name__, use_pages=True)
 
-app = Dash()
-
-app.layout = dmc.Container([
-    dmc.Title('My App'),
-    dmc.RadioGroup(
-        [dmc.Radio(i, value=i) for i in ['pop', 'lifeExp', 'gdpPercap']],
-        id = 'my-dmc-radio-item',
-        value = 'lifeExp',
-        size = "sm"
-    ),
-    dmc.Grid([
-        dmc.Col([
-            dash_table.DataTable(data = df.to_dict('records'), page_size = 12, style_table = {'overflowX' : 'auto'})
-        ], span = 6),
-        dmc.Col([
-            dcc.Graph(figure = {}, id='graph-placeholder')
-        ], span = 6),
-    ]),
-], fluid = True)    
-    
-@callback(
-    Output(component_id = 'graph-placeholder', component_property = 'figure'),
-    Input(component_id = 'my-dmc-radio-item', component_property = 'value')
+app.layout = dmc.MantineProvider(
+    children=html.Div(
+        [
+            dmc.Header(
+                height = "7%",
+                children= [
+                    dmc.Grid(
+                        children=[
+                            dmc.Col(
+                                dmc.Burger(
+                                    id="burger-icon",
+                                    opened=False,  
+                                    size="sm",
+                                    color="black",
+                                ), span=1
+                            ),
+                            dmc.Col(
+                                dmc.Group(
+                                    children=[
+                                    dmc.Title("Get Ready", order=1),
+                                    ],
+                                    position="center",
+                                    spacing="lg"
+                                ), span=10
+                            )
+                        ]
+                    )
+                ]
+            ),
+            dmc.Drawer(
+                id="navbar",
+                title="Get Ready",
+                padding="md",
+                size="300px",
+                opened= False,  
+                children=[
+                    dmc.NavLink(label="Home", href="/"),
+                    dmc.NavLink(label="About", href="/about"),
+                    dmc.NavLink(label="Mathematik", href="/math"),
+                    dmc.NavLink(label="Deutsch", href="/deutsch"),
+                ],
+            ),
+            dash.page_container,
+        ]
+    )
 )
 
-def update_graph(col_chosen):
-    fig = px.histogram(df, x = 'continent', y = col_chosen, histfunc = 'avg')
-    return fig
-#print(app.layout)
+@app.callback(
+    Output("navbar", "opened"), 
+    Output("burger-icon", "opened"),  
+    Input("burger-icon", "opened"),
+    prevent_initial_call=True
+)
+def toggle_navbar(is_opened):
+    print(is_opened)
+    return  is_opened, not is_opened
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
+if __name__ == "__main__":
+    app.run_server(debug=True)

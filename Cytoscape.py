@@ -2,10 +2,9 @@ from dash import Dash, html, dcc, Input, Output, State, ctx, callback
 import dash_mantine_components as dmc
 import dash_cytoscape as cyto
 import json
+import pdfkit
 
 cyto.load_extra_layouts()
-
-
 
 with open("mathTargetsElementsScrabbed.json", "r") as file:
     default_elements = json.load(file)
@@ -16,7 +15,7 @@ server = app.server
 with open('stylesheet.json','r') as file:
     stylesheet=json.load(file)
 
-with open('profilesLabels.json', 'r') as file:
+with open('jobIdsToJobNames.json', 'r') as file:
     profilesLabels = json.load(file)
 
 profilesLabelsSelectData = [{"value": "all", "label": "Alle Lernziele anzeigen"}]
@@ -26,26 +25,44 @@ for value in profilesLabels:
         "label": profilesLabels[value]
     })
 
+navbar = dmc.Navbar(
+    children=[
+        dmc.Group(
+            children=[
+                dmc.NavLink(label="Home", href="/"),
+                dmc.NavLink(label="About", href="/about"),
+                dmc.NavLink(label="Contact", href="/contact")
+                
+            ],
+            position="top",
+            spacing="lg"
+        )
+    ],
+    height=60,
+    p="md",
+    style={"backgroundColor": "grey"}
+)
 
 app.layout = dmc.MantineProvider([
+    navbar,
     dmc.Title("Berufsexplorer"),
     dmc.Grid(
-        children = [
-            dmc.Col(        
+        children=[
+            dmc.Col(
                 html.Div([
                     cyto.Cytoscape(
                         id='cytoscape-view',
                         layout={
                             'name': 'preset',
                             'animate': True
-                                },
+                        },
                         style={'width': 'auto', 'height': '707px'},
-                        elements= default_elements,
+                        elements=default_elements,
                         stylesheet=stylesheet
                     ),
                     html.P(id='cytoscape-tapNodeData-output'),
-                    html.P(id='cytoscape-selectedNodeData-output') 
-                ]), span = 8
+                    html.P(id='cytoscape-selectedNodeData-output')
+                ]), span=8
             ),
             dmc.Col(
                 dmc.Tabs(
@@ -53,46 +70,70 @@ app.layout = dmc.MantineProvider([
                         dmc.TabsList(
                             [
                                 dmc.Tab("Explorer", value="explorer"),
-                                dmc.Tab("Compare", value="compare")
+                                dmc.Tab("Vergleichen", value="compare")
                             ]
-                        ),
-                        dmc.TabsPanel(
-                                dmc.Select(
-                                label="Beruf",
-                                placeholder="Wähle einen Beruf",
-                                id="profile-select",
-                                value="all",
-                                data=profilesLabelsSelectData
-                                ),value = "explorer"
                         ),
                         dmc.TabsPanel(
                             [
                                 dmc.Select(
-                                label="Berufsprofil A",
-                                placeholder="Berufsprofil A",
-                                id="profile-selectA",
-                                value="all",
-                                data=profilesLabelsSelectData
+                                    label="Beruf",
+                                    placeholder="Wähle einen Beruf",
+                                    id="profile-select",
+                                    value="all",
+                                    data=profilesLabelsSelectData
+                                ), 
+                                dmc.Button("Generate PDF", id="generate-pdf-button")
+
+                            ], value="explorer"
+                        ), 
+                        dmc.TabsPanel(
+                            [
+                                dmc.Select(
+                                    label="Berufsprofil A",
+                                    placeholder="Berufsprofil A",
+                                    id="profile-selectA",
+                                    value="all",
+                                    data=profilesLabelsSelectData
                                 ),
                                 dmc.Select(
-                                label="Berufsprofil B",
-                                placeholder="Berufsprofil B",
-                                id="profile-selectB",
-                                value="all",
-                                data=profilesLabelsSelectData
+                                    label="Berufsprofil B",
+                                    placeholder="Berufsprofil B",
+                                    id="profile-selectB",
+                                    value="all",
+                                    data=profilesLabelsSelectData
                                 ),
-                            ], value = "compare"
-
+                                dmc.Button("Generate PDF", id="generate-pdf-button")
+                            ], value="compare"
                         )
-                    ], 
+                    ],
                     color="red",
                     orientation="horizontal",
-                ), span = 4
+                ), span=4
             ),
         ], gutter="xl",
     )
-]
+])
+"""
+@callback(
+    Output('cytoscape-view', 'generateImage'),
+    Input('generate-pdf-button', 'n_clicks'),
+    prevent_initial_call=True
 )
+def generate_pdf(n_clicks):
+    print("generate pdf")
+    if n_clicks:
+        # HTML-Inhalt der Cytoscape-Ansicht abrufen
+        html_content = app.get_asset_url('cytoscape-view')
+        print(html_content)
+        # PDF-Datei generieren
+        pdfkit.from_string(html_content, 'cytoscape_view.pdf')
+        
+        return {
+            'type': "pdf",
+            'action': "download"
+        }
+"""
+
 @callback(
     Output('cytoscape-view', 'elements', allow_duplicate=True),
     Input('profile-selectA','value'),
@@ -155,6 +196,8 @@ def compare_profiles(value1, value2):
     prevent_initial_call = True
 )
 def select_profile(value):
+    
+    print("select profile")
     if value == "all":
         return default_elements
     

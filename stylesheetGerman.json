@@ -1,0 +1,105 @@
+[
+    {
+        "selector": "node",
+        "style": {
+            "content": "data(id)",
+            "text-halign": "center",
+            "text-valign": "center",
+            "text-wrap": "wrap",
+            "text-max-width": "20px",
+            "width": "label",
+            "height": "label",
+            "background-color": "blue",
+            "shape": "ellipse",
+            "padding": "3px"
+        }
+    },
+
+
+    {
+        "selector": "[field = 'Schreiben']",
+        "style": {
+            "content": "data(label)",
+            "background-color":"#d46668",
+            "border-color":"#f94144",
+            "border-width":"1px",
+            "shape": "rectangle",
+            "font-size": "2"
+        }
+    },
+    {
+        "selector": "[field = 'Lesen']",
+        "style": {
+            "content": "data(label)",
+            "border-color": "#f8961e",
+            "background-color": "#cc924a",
+            "border-width": "1px",
+            "shape": "rectangle",
+            "font-size": "2"
+        }
+    },
+    {
+        "selector": "[field = 'Hören']",
+        "style": {
+            "content": "data(label)",
+            "background-color":"#92ae7d",
+            "border-color": "#90be6d",
+            "border-width": "1px",
+            "shape": "rectangle",
+            "font-size": "2"
+        }
+    },
+    {
+        "selector": "[field = 'Sprechen']",
+        "style": {
+            "content": "data(label)",
+            "background-color":"#627485",
+            "border-color": "#577590",
+            "border-width": "2px",
+            "shape": "rectangle",
+            "font-size": "2"
+        }
+    },
+    {
+        "selector": "[level < '3']",
+        "style": {
+            "shape": "ellipse",
+            "content": "_",
+            "font-size": "1"
+        }
+    },
+    {
+        "selector": "[level < '2']",
+        "style": {
+            "shape": "round-rectangle",
+            "content": "data(label)",
+            "font-size": "10"
+
+        }
+    },
+    {
+        "selector": "edge",
+        "style" : {
+            "curve-style": "straight-triangle"
+        }
+    },
+    {
+        "selector": "[classes *= 'A']",
+        "style" : {
+            "background-color": "#3CAEA3"
+        }
+    },
+    {
+        "selector": "[classes *= 'both']",
+        "style" : {
+            "background-color": "#F6D55C"
+        }
+    },
+    {
+        "selector": "[classes *= 'B']",
+        "style" : {
+            "background-color": "#ED553B"
+        }
+    }
+
+]

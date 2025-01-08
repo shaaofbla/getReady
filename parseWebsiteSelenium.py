@@ -79,7 +79,6 @@ def parseMathTargetsLabels():
                     print(len(elements))
                     for i, element in enumerate(elements):
                         try:
-
                             subCells = element.find_elements("class name", "ng-binding")
                             for j, cell in enumerate(subCells):
                                 label_level3 = cell.text
@@ -98,11 +97,136 @@ def parseMathTargetsLabels():
         outfile.close()
 
     finally:
-        print("closing...")
+        print("pars Math Labels closing...")
         driver.close()
 
-#parseMathTargetsLabels()
+def clickMinus(driver):
+    minus = driver.find_element("class name", "icon-minus-2")
+    minus.click()
+    driver.implicitly_wait(5)
 
+def parseGermanTargetsLabels(url):
+    idsToLabels = {}
+    germanTargets = {}
+    letters = {
+            0: "A",
+            1: "B",
+            2: "C",
+            3: "D",
+            4: "E"
+        }
+    fields = {
+        0: "Hören",
+        1: "Sprechen",
+        2: "Lesen",
+        3: "Schreiben",
+        }
+    
+
+    try:
+        #driver.get('https://app-p-kompetenzraster.azurewebsites.net/#/professionspublic/0ea79c50-f9dc-4760-b725-b357135d3db6')
+        driverGerman = webdriver.Firefox()
+        driverGerman.implicitly_wait(2)
+
+        driverGerman.get(url)
+        container = driverGerman.find_element("class name", "button-container")
+        buttons = container.find_elements("class name","grid-selection-btn")
+        buttons[1].click()
+
+        driverGerman.implicitly_wait(2)
+   
+        #plus = driver.find_elements("class name", "icon-plus-2")
+        #arrow = driver.find_elements("class name", "arrow-header-container")
+        content = driverGerman.find_elements("class name","theme-container")
+
+        #tables = content[0].find_elements("class name", "table")
+        for s,container in enumerate(content):
+            tables = container.find_elements("class name", "table")
+            # Hören
+            germanTargets[fields[s]] = {}
+            
+            for t,table in enumerate(tables):
+                print(f't: {t}')
+                #print(table.get_attribute("innerHTML"))
+                rows = table.find_elements("tag name", "tr")
+
+                cell = rows[0].find_element("tag name", "td")
+                label = cell.get_attribute("innerHTML")
+                label=label.split()
+                label = " ".join(label)
+                
+                print(f'label: {label}')
+
+                cell = rows[1].find_elements("tag name", "td")
+                id = cell[0].get_attribute("innerHTML")
+                id = id.split()
+                id = id[1]
+                print(f'id: {id}')
+
+                description = cell[1].get_attribute("innerHTML")
+                description = description.split()
+                description = " ".join(description)
+                print(f'description: {description}')
+
+                germanTargets[fields[s]][id] = {
+                    "label": label,
+                    "description": description,
+                    "children": {}
+                }
+                
+                for r,row in enumerate(rows[2:]):
+                    #print(row.get_attribute("innerHTML"))
+                    cells = row.find_elements("tag name", "td")
+
+                    spans = cells[0].find_elements("tag name", "span")
+                    idLevel1 = spans[0].get_attribute("innerHTML")
+                    print(f'id: {idLevel1}')
+                    label = spans[1].get_attribute("innerHTML")
+                    print(f'label: {label}')
+                    germanTargets[fields[s]][id]["children"][idLevel1] = {
+                        "label": label,
+                        "children": {}
+                    }
+
+
+                    for c,cell in enumerate(cells[1:]):
+                        idTarget = idLevel1+letters[c]
+                        print(f'id: {idTarget}')
+                        #print(cell.get_attribute("innerHTML"))
+                        try:
+                            item = cell.find_element("class name", "competence-item-content")
+                            label = item.find_element("class name", "ng-binding")
+                            label = label.get_attribute("innerHTML")
+                            print(f'label: {label}')
+
+                            checkbox = False
+                            #print(item.get_attribute("innerHTML"))
+                            try:
+                                item.find_element("class name", "checkbox")
+                                checkbox = True
+
+                            except:
+                                print("No checkbox found..")
+                            
+                            germanTargets[fields[s]][id]["children"][idLevel1]["children"][idTarget] = {
+                                "label": label,
+                                "checked": checkbox
+                            }
+
+                        except:
+                            print("No Target found..")
+        #driverGerman.close() 
+        return germanTargets
+ 
+
+    except Exception as e:
+        print(f"An Exception occurred {e}")
+
+    finally:
+        print("parse German closing...")
+        driverGerman.close()
+        #driver.close()
+        
 def compileJobId(text, i):
     text = text[0:4]
     id = "JB"+text+"{:03d}".format(i)
@@ -203,9 +327,12 @@ def parseMathSelectedTargets2(profile, url, jobId):
         print(f"Total execution time: {end_total - start_total:.2f} seconds")
 
         return profile
+
+    except Exception as e:
+        print(f"An Exception occurred {e}")
     
     finally:
-        print("closing...")
+        print("parse Math 2 closing...")
         driver.close()
 
 def parseMathSelectedTargets(profile, url, jobId):
@@ -280,16 +407,23 @@ def parseMathSelectedTargets(profile, url, jobId):
         print(f"An Exception occurred {e}")
 
     finally:
-
-        print("closing... ")
+        print("parse Math closing... ")
         driver.close() 
 
 def goThruJoblist():
+
 # Load the page
+
     jobs = {}
     i = 1
-    profile = {}
+    with open("german.json", "r") as infile:
+        scrabbedAlready = json.load(infile)
+    infile.close()
+    for jobId in scrabbedAlready:
+        print(jobId)
+    
     links = {}
+    german = scrabbedAlready
     try:
         driver.get('https://app-p-kompetenzraster.azurewebsites.net/#/')
         content = driver.find_elements("tag name","td")
@@ -315,9 +449,15 @@ def goThruJoblist():
                 #driver.implicitly_wait(5)
         for jobId, url in links.items():
             print(jobId+" "+url)
-            profile = parseMathSelectedTargets(profile, url, jobId)
-            print(profile)
-
+            #profile = parseMathSelectedTargets(profile, url, jobId)
+            if jobId not in scrabbedAlready:
+                targets = parseGermanTargetsLabels(url)
+                german[jobId] = targets
+                with open("germanDep.json", "w") as outfile:
+                    json.dump(german, outfile, indent = 4)
+                outfile.close()
+            #print(profile)
+        """
         with open("jobIdsToJobNames.json", "w") as outfile:
             json.dump(jobs, outfile, indent=4)
         outfile.close() 
@@ -327,13 +467,17 @@ def goThruJoblist():
             json.dump(profile, outfile, indent=4)
         outfile.close() 
         print(jobs)
+        """
 
 
     finally:
-        print("closing...")
+        print("go Thru Joblist closing...")
         driver.close()
 
-goThruJoblist()
-
-# Close the browser
-driver.quit()
+if __name__ == "__main__":
+    print("main")
+    # Close the browser
+    #url = 'https://app-p-kompetenzraster.azurewebsites.net/#/professionspublic/0ea79c50-f9dc-4760-b725-b357135d3db6'
+    #parseGermanTargetsLabels(url)
+    goThruJoblist()
+    driver.quit()
