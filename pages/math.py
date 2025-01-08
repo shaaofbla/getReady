@@ -1,4 +1,4 @@
-from dash import Dash, html, dcc, Input, Output, State, ctx, callback, register_page
+from dash import html, dcc, Input, Output, State, ctx, callback, register_page
 import dash_mantine_components as dmc
 import dash_cytoscape as cyto
 import json
@@ -66,6 +66,24 @@ layout = html.Div([
                                 searchable = True,
                                 data=profilesLabelsSelectData
                                 ),
+                                html.Div(
+                                    dmc.CheckboxGroup(
+                                        id = "select-fields-math",
+                                        label = "Felder",
+                                        orientation="horizontal",
+    
+                                        offset="md",
+                                        children=dmc.Group(
+                                                [
+                                                dmc.Checkbox(label="Zahlen und Variable", value="ZuV"),
+                                                dmc.Checkbox(label="Form und Raum", value="FuR"),
+                                                dmc.Checkbox(label="Grössen, Funktionen, Daten und Zufall", value="GFDuZ"),
+                                            ],
+                                            mt=10
+                                        ),
+                                        value=["ZuV", "FuR", "GFDuZ"]
+                                    )
+                                ),
                                 dmc.Button("Generate SVG", id="generate-svg-button"),
                                 html.Div(id='image-text')
 
@@ -100,6 +118,26 @@ layout = html.Div([
     )
     ]
 )
+
+@callback(
+    Output('cytoscape-view', 'elements', allow_duplicate=True),
+    Input('select-fields-math', 'value'),
+    prevent_initial_call = True
+)
+def select_fields(value):
+    print(value)
+    elements = []
+    for val in value:
+        for element in default_elements:
+
+            if val in element['data']['id']:
+                elements.append(element)
+                print(element['data']['id'])
+                print(val in element['data']['id'])
+    return elements
+
+
+
 @callback(
     Output('cytoscape-view', 'elements', allow_duplicate=True),
     Input('profile-selectA','value'),

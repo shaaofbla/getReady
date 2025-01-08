@@ -66,6 +66,21 @@ layout = html.Div([
                                 searchable = True,
                                 data=profilesLabelsSelectData
                                 ),
+                                html.Div(
+                                    dmc.CheckboxGroup(
+                                        id = "select-field-deutsch",
+                                        label="Fähigkeiten",
+                                        orientation="vertical",
+                                        children =[
+                                            dmc.Checkbox(label="Hören", value="Hr"),
+                                            dmc.Checkbox(label="Lesen", value="Ls"),
+                                            dmc.Checkbox(label="Sprechen", value="Sr"),
+                                            dmc.Checkbox(label="Schreiben", value="Sh")
+                                            ],
+                                        value=["Hr", "Ls", "Sr", "Sh"],
+
+                                    )
+                                ),
                                 dmc.Button("Generate SVG", id="generate-svg-button-deutsch"),
                                 html.Div(id='image-text-deutsch')
 
@@ -100,6 +115,20 @@ layout = html.Div([
     )
     ]
 )
+@callback(
+        Output('cytoscape-view-deutsch', 'elements', allow_duplicate=True),
+        Input('select-field-deutsch', 'value'),
+        prevent_initial_call = True
+)
+def select_fields(value):
+    elements = []
+    for val in value:
+        for element in default_elements:
+            #print(element)
+            if val in element['data']['id']:
+                elements.append(element)
+    return #elements
+
 @callback(
     Output('cytoscape-view-deutsch', 'elements', allow_duplicate=True),
     Input('profile-selectA-deutsch','value'),
