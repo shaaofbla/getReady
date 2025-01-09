@@ -16,7 +16,7 @@ import json
 #    elements = json.load(file)
 #file.close()
 
-with open('german.json', 'r') as file:
+with open('germanDep.json', 'r') as file:
     tree = json.load(file)
 file.close()
 
@@ -42,9 +42,9 @@ for node in tree:
                             
                         else:
                             profiles[leaf].append(jobId)
-#print(profiles)
+print(profiles)
 print(len(tree))
-
+quit()
 elements = []
 ids = []
 

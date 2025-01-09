@@ -75,9 +75,18 @@ layout = html.Div([
                                         offset="md",
                                         children=dmc.Group(
                                                 [
-                                                dmc.Checkbox(label="Zahlen und Variable", value="ZuV"),
-                                                dmc.Checkbox(label="Form und Raum", value="FuR"),
-                                                dmc.Checkbox(label="Grössen, Funktionen, Daten und Zufall", value="GFDuZ"),
+                                                dmc.Checkbox(label="Zahlen und Variable", value="ZuV", style= {
+                                                    "accent-color" : "#05C793",
+                                                    "background-color" : "#05C793",
+                                                    "border-color" : "#05C793",
+                                                    "color" : "#05C793",
+                                                    }),
+                                                dmc.Checkbox(label="Form und Raum", value="FuR", style= {
+                                                    "color" : "##f7a1b2",
+                                                    }),
+                                                dmc.Checkbox(label="Grössen, Funktionen, Daten und Zufall", value="GFDuZ",style= {
+                                                    "color" : "#FFCE5C",
+                                                    }),
                                             ],
                                             mt=10
                                         ),
