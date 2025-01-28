@@ -1,4 +1,4 @@
-[
+[   
     {
         "selector": "node",
         "style": {
@@ -73,14 +73,24 @@
         "style": {
             "shape": "round-rectangle",
             "content": "data(label)",
-            "font-size": "10"
+            "font-size": "8"
+
+        }
+    },
+    {
+        "selector": "[level <= '0']",
+        "style": {
+            "shape": "round-rectangle",
+            "content": "data(label)",
+            "font-size": "18"
 
         }
     },
     {
         "selector": "edge",
         "style" : {
-            "curve-style": "straight-triangle"
+            "curve-style": "round-taxi",
+            "width": "1px"
         }
     },
     {
@@ -100,6 +110,28 @@
         "style" : {
             "background-color": "#ED553B"
         }
+    },
+    {
+        "selector": "[nodeLevel = 3]",
+        "style": {
+            "label": "data(targetLevel)",
+            "font-size": "8"
+
+        }
+    },
+    {
+        "selector": "[field = 'annotation']",
+        "style": {
+            "label": "data(label)",
+            "font-size": "14",
+            "background-color": "white",
+            "text-max-width": "300px",
+            "text-wrap": "wrap",
+            "text-justify": "left",
+            "text-border-color":"black"
+
+        }
     }
+
 
 ]

@@ -9,18 +9,20 @@ register_page(__name__, path="/deutsch")
 cyto.load_extra_layouts()
 
 
-
 with open("germanElements.json", "r") as file:
     default_elements = json.load(file)
+file.close()
 
 
 with open('stylesheetGerman.json','r') as file:
     stylesheet=json.load(file)
+file.close()
 
 with open('jobIdstoJobNames.json', 'r') as file:
     profilesLabels = json.load(file)
+file.close()
 
-profilesLabelsSelectData = [{"value": "all", "label": "Alle Lernziele anzeigen"}]
+profilesLabelsSelectData = [{"value": "all", "label": "Alle Kompetenzen anzeigen"}]
 for value in profilesLabels:
     profilesLabelsSelectData.append({
         "value": value,
@@ -36,10 +38,14 @@ layout = html.Div([
                     cyto.Cytoscape(
                         id='cytoscape-view-deutsch',
                         layout={
-                            'name': 'preset',
+                            'name': 'preset', #'euler'->is taking the positions into account,#'preset',
                             'animate': True
                                 },
-                        style={'width': 'auto', 'height': '707px'},
+                        style={
+                            'width': 'auto', 
+                            'height': '707px',
+                            'background-color': 'white'
+                            },
                         elements= default_elements,
                         stylesheet=stylesheet
                     ),
@@ -69,15 +75,16 @@ layout = html.Div([
                                 html.Div(
                                     dmc.CheckboxGroup(
                                         id = "select-field-deutsch",
-                                        label="Fähigkeiten",
+                                        label="Felder",
                                         orientation="vertical",
                                         children =[
-                                            dmc.Checkbox(label="Hören", value="Hr"),
-                                            dmc.Checkbox(label="Lesen", value="Ls"),
-                                            dmc.Checkbox(label="Sprechen", value="Sr"),
-                                            dmc.Checkbox(label="Schreiben", value="Sh")
+                                            dmc.Checkbox(label="Hören", value="Hören"),
+                                            dmc.Checkbox(label="Lesen", value="Lesen"),
+                                            dmc.Checkbox(label="Sprechen", value="Sprechen"),
+                                            dmc.Checkbox(label="Schreiben", value="Schreiben")
+
                                             ],
-                                        value=["Hr", "Ls", "Sr", "Sh"],
+                                        value=["Hören", "Lesen", "Sprechen", "Schreiben"],
 
                                     )
                                 ),
@@ -124,15 +131,14 @@ def select_fields(value):
     elements = []
     for val in value:
         for element in default_elements:
-            #print(element)
-            if val in element['data']['id']:
+            if val == element['data']['field']:
                 elements.append(element)
-    return #elements
+    return elements
 
 @callback(
     Output('cytoscape-view-deutsch', 'elements', allow_duplicate=True),
     Input('profile-selectA-deutsch','value'),
-    Input('profile-selectB-deutsch', 'value'),
+    Input('profile-selectB-deutsch', 'value',),
     prevent_initial_call = True
 )
 def compare_profiles(value1, value2):
@@ -188,15 +194,17 @@ def compare_profiles(value1, value2):
     Output('cytoscape-view-deutsch', 'generateImage'),
     Output('image-text-deutsch', 'children'),
     Input('generate-svg-button-deutsch', 'n_clicks'),
+    State('profile-select-deutsch', 'value'),
     prevent_initial_call=True
 )
-def export_svg(n_clicks):
+def export_svg(n_clicks, value):
+    print("value: ", value)
     # Trigger PNG generation
     return (
         {
-            'type': 'svg',  
-            'action': 'download',
-            'filename': 'cytoscape_graph.svg'  # Optional filename
+            'type': 'png',  
+            'action': 'both',
+            'filename': 'Kompetenzen-Deutsch-{0}'.format(value)  # Optional filename
         },
         "Generating SVG. Check your downloads!"
     )
@@ -237,4 +245,21 @@ def select_profile(value):
 
     for edge in edges:
         new_elements.append(edges[edge])
+    
+    if value != 'all':
+        new_elements.append({
+            'data': {
+                'id': 'annotation',
+                'label': profilesLabels[value],
+                'field': 'annotation'
+            },
+            'position': {
+                    'x': 500.,
+                    'y': 30.,
+                    'locked': 'true'
+                }
+            }
+        )
+
+    
     return new_elements

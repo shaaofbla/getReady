@@ -44,10 +44,30 @@ for node in tree:
                             profiles[leaf].append(jobId)
 print(profiles)
 print(len(tree))
-quit()
-elements = []
+
+with open('germanElements.json', 'r') as file:
+    elements = json.load(file)
+file.close()
+
 ids = []
 
+# update profiles
+
+for i, element in enumerate(elements):
+    if element['type'] == "node":
+        id = element['data']['id']
+        if id in profiles:
+            element['data']['profile'] = profiles[id]
+            elements[i] = element
+            print(element)
+
+
+with open("germanElementsUp.json", "w") as outfile:
+    json.dump(elements, outfile, indent=4)
+outfile.close()
+quit()
+
+# generate whole tree
 for i, node in enumerate(tree):
     jobId = node
     print(jobId)
