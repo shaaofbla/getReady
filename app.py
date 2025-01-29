@@ -42,6 +42,7 @@ app.layout = dmc.MantineProvider(
                 children=[
                     dmc.NavLink(label="Home", href="/"),
                     dmc.NavLink(label="About", href="/about"),
+                    dmc.NavLink(label="Statistik", href="/stats"),
                     dmc.NavLink(label="Mathematik", href="/math"),
                     dmc.NavLink(label="Deutsch", href="/deutsch"),
                 ],

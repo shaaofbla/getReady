@@ -95,6 +95,10 @@ for jobId in mathTargets:
 
 print(data)
 
+with open("statData.json", "w") as outfile:
+    json.dump(data, outfile, indent=4)
+outfile.close()
+
 df = pd.DataFrame(data)
 print(df.shape)
 #fig = px.line_polar(df.loc("JBCoif030"), r=["nTargetsGerman_Sprechen", "nTargetsGerman_Schreiben", "nTargetsGerman_Hören", "nTargetsGerman_Lesen"], theta=["Sprechen", "Schreiben", "Hören", "Lesen"], line_close=True)

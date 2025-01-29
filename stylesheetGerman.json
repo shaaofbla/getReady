@@ -64,7 +64,7 @@
         "selector": "[level < '3']",
         "style": {
             "shape": "ellipse",
-            "content": "_",
+            "content": "-",
             "font-size": "1"
         }
     },
@@ -116,19 +116,6 @@
         "style": {
             "label": "data(targetLevel)",
             "font-size": "8"
-
-        }
-    },
-    {
-        "selector": "[field = 'annotation']",
-        "style": {
-            "label": "data(label)",
-            "font-size": "14",
-            "background-color": "white",
-            "text-max-width": "300px",
-            "text-wrap": "wrap",
-            "text-justify": "left",
-            "text-border-color":"black"
 
         }
     }

@@ -73,18 +73,19 @@ layout = html.Div([
                                 data=profilesLabelsSelectData
                                 ),
                                 html.Div(
-                                    dmc.CheckboxGroup(
+                                    dmc.RadioGroup(
                                         id = "select-field-deutsch",
                                         label="Felder",
                                         orientation="vertical",
                                         children =[
-                                            dmc.Checkbox(label="Hören", value="Hören"),
-                                            dmc.Checkbox(label="Lesen", value="Lesen"),
-                                            dmc.Checkbox(label="Sprechen", value="Sprechen"),
-                                            dmc.Checkbox(label="Schreiben", value="Schreiben")
+                                            dmc.Radio(label="Alle", value="all"),
+                                            dmc.Radio(label="Hören", value="Hören"),
+                                            dmc.Radio(label="Lesen", value="Lesen"),
+                                            dmc.Radio(label="Sprechen", value="Sprechen"),
+                                            dmc.Radio(label="Schreiben", value="Schreiben")
 
                                             ],
-                                        value=["Hören", "Lesen", "Sprechen", "Schreiben"],
+                                        value=["all"],
 
                                     )
                                 ),
@@ -125,15 +126,66 @@ layout = html.Div([
 @callback(
         Output('cytoscape-view-deutsch', 'elements', allow_duplicate=True),
         Input('select-field-deutsch', 'value'),
+        State('profile-select-deutsch', 'value'),
         prevent_initial_call = True
 )
-def select_fields(value):
+def select_fields(value, profile):
     elements = []
-    for val in value:
+    print("field ", value)
+    print("profile ", profile)
+    # Filter elements by field
+    if value != 'all':
         for element in default_elements:
-            if val == element['data']['field']:
+            if value == element['data']['field']:
                 elements.append(element)
-    return elements
+    else:
+        elements = default_elements
+
+    if profile == 'all':
+        return elements
+    
+    new_elements = []
+    targetIds = []
+
+    # Filter elements by profile
+    for element in elements:
+
+        if element['type'] == 'node' and element['data']['level'] == 3:
+            if profile in element['data']['profile']:
+                new_elements.append(element)
+                targetIds.append(element['data']['id'])
+        elif element['type'] == 'node' and element['data']['level'] <= 2:
+            new_elements.append(element)
+            targetIds.append(element['data']['id'])
+        elif element['type'] == 'edge':
+            if element['data']['target'] in targetIds:
+                new_elements.append(element)
+
+    # Add annotation
+    if profile == 'all':
+        label = 'Alle Kompetenzen'
+    else:
+        label = profilesLabels[profile]
+        label = label.replace("/", "/\n")
+
+    annotation_Positions = {
+        'Hören': {'x': -25., 'y': 170.},
+        'Lesen': {'x': -25., 'y': 500.},
+        'Sprechen': {'x': 430., 'y': 170.},
+        'Schreiben': {'x': 435., 'y': 520.},
+        'all': {'x': -25., 'y': 350.}
+    }
+
+    new_elements.append({
+        'data': {
+            'id': 'annotation',
+            'label': label,
+            'field': 'annotation'
+        },
+        'position': annotation_Positions[value]
+    })
+    
+    return new_elements
 
 @callback(
     Output('cytoscape-view-deutsch', 'elements', allow_duplicate=True),
@@ -195,16 +247,42 @@ def compare_profiles(value1, value2):
     Output('image-text-deutsch', 'children'),
     Input('generate-svg-button-deutsch', 'n_clicks'),
     State('profile-select-deutsch', 'value'),
+    State('select-field-deutsch', 'value'),
+
     prevent_initial_call=True
 )
-def export_svg(n_clicks, value):
-    print("value: ", value)
+def export_svg(n_clicks, value, fields):
     # Trigger PNG generation
+    print(value)
+    print(fields)
+    print(profilesLabels)
+
+    if value == "all":
+        jobName = "AlleKompetenzen"
+    else:
+        jobName = profilesLabels[value]
+        if "/" in jobName:
+            jobName = jobName.split("/")
+            jobName = jobName[0]
+            jobName = jobName.replace(" ", "")
+        elif "(" in jobName:
+            jobName = jobName.split("(")
+            #jobName = jobName.split(")")
+            jobName = jobName[1]
+            jobName = jobName.replace(")", "")
+            jobName = jobName.replace(" ", "-")
+        else:
+            print(jobName)
+            
+    if fields[0] == "all":
+        fields = "AlleFelder"
+    filename = 'Kompetenzen-Deutsch-{0}-{1}'.format(jobName,fields)
+    print(filename)
     return (
         {
-            'type': 'png',  
-            'action': 'both',
-            'filename': 'Kompetenzen-Deutsch-{0}'.format(value)  # Optional filename
+            'type': 'svg',  
+            'action': 'download',
+            'filename': filename  # Optional filename
         },
         "Generating SVG. Check your downloads!"
     )
@@ -254,12 +332,63 @@ def select_profile(value):
                 'field': 'annotation'
             },
             'position': {
-                    'x': 500.,
-                    'y': 30.,
+                    'x': -25.,
+                    'y': 350.,
                     'locked': 'true'
                 }
             }
         )
+    return new_elements
+    
+@callback(
+        Output('cytoscape-view-deutsch', 'stylesheet'),
+        Input('select-field-deutsch', 'value'),
+        prevent_initial_call=True
+    )
+def annotation_styling(value):
+    if value == 'all':
+        stylesheet.append(
+            {
+                "selector": "[field = 'annotation']",
+                "style": {
+                    "label": "data(label)",
+                    "font-size": "14",
+                    "background-color": "#aaaaaa",
+                    "border-color": "#888888",
+                    "text-max-width": "300px",
+                    "text-wrap": "wrap",
+                    "text-justify": "left",
+                    "text-border-color":"black",
+                    "shape":"rectangle",
+                    "border-width":"3px",
+                    "text-rotation": "270deg",
+                    "width": "40",
+                    "height": "330"
+
+                }
+        }
+    )
+    else:
+        stylesheet.append(
+            {
+                "selector": "[field = 'annotation']",
+                "style": {
+                    "label": "data(label)",
+                    "font-size": "10",
+                    "background-color": "#aaaaaa",
+                    "border-color": "#888888",
+                    "text-max-width": "250px",
+                    "text-wrap": "wrap",
+                    "text-justify": "left",
+                    "text-border-color":"black",
+                    "shape":"rectangle",
+                    "border-width":"3px",
+                    "text-rotation": "270deg",
+                    "width": "20",
+                    "height": "250"
+                }
+            }
+        )
+    return stylesheet
 
     
-    return new_elements
