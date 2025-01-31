@@ -1,10 +1,12 @@
 from dash import Dash, html, Input, Output, State
 import dash_mantine_components as dmc
 import dash 
+import pages.theme as theme
 
 app = Dash(__name__, use_pages=True)
 
 app.layout = dmc.MantineProvider(
+    theme=theme.theme,
     children=html.Div(
         [
             dmc.Header(

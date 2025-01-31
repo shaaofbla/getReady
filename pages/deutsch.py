@@ -2,7 +2,7 @@ from dash import Dash, html, dcc, Input, Output, State, ctx, callback, register_
 import dash_mantine_components as dmc
 import dash_cytoscape as cyto
 import json
-
+import pages.theme as theme
 
 register_page(__name__, path="/deutsch")
 
@@ -17,6 +17,7 @@ file.close()
 with open('stylesheetGerman.json','r') as file:
     stylesheet=json.load(file)
 file.close()
+default_stylesheet = stylesheet.copy()
 
 with open('jobIdstoJobNames.json', 'r') as file:
     profilesLabels = json.load(file)
@@ -55,7 +56,9 @@ layout = html.Div([
             ),
             dmc.Col(
                 dmc.Tabs(
-                    [
+                    id="tabs-deutsch",
+                    value="explorer",
+                    children=[
                         dmc.TabsList(
                             [
                                 dmc.Tab("Explorer", value="explorer"),
@@ -77,16 +80,14 @@ layout = html.Div([
                                         id = "select-field-deutsch",
                                         label="Felder",
                                         orientation="vertical",
+                                        value="all",
                                         children =[
-                                            dmc.Radio(label="Alle", value="all"),
-                                            dmc.Radio(label="Hören", value="Hören"),
-                                            dmc.Radio(label="Lesen", value="Lesen"),
-                                            dmc.Radio(label="Sprechen", value="Sprechen"),
-                                            dmc.Radio(label="Schreiben", value="Schreiben")
-
+                                            dmc.Radio(label="Alle", value="all",color="deutsch.7"),
+                                            dmc.Radio(label="Hören", value="Hören", color="deutsch.4"),
+                                            dmc.Radio(label="Lesen", value="Lesen", color="deutsch.2"),
+                                            dmc.Radio(label="Sprechen", value="Sprechen", color="deutsch.6"),
+                                            dmc.Radio(label="Schreiben", value="Schreiben", color="deutsch.0")
                                             ],
-                                        value=["all"],
-
                                     )
                                 ),
                                 dmc.Button("Generate SVG", id="generate-svg-button-deutsch"),
@@ -112,6 +113,9 @@ layout = html.Div([
                                 searchable = True,
                                 data=profilesLabelsSelectData
                                 ),
+                                dmc.Badge("Profil A",variant="filled",size="xl",radius="xs",color="deutsch.1"),
+                                dmc.Badge("Profil B",variant="filled",size="xl",radius="xs",color="deutsch.5"),
+                                dmc.Badge("Beide",variant="filled",size="xl",radius="xs",color="deutsch.3"),
                             ], value = "compare"
                         )
                     ], 
@@ -125,11 +129,61 @@ layout = html.Div([
 )
 @callback(
         Output('cytoscape-view-deutsch', 'elements', allow_duplicate=True),
+        Input('tabs-deutsch', 'value'),
+        prevent_initial_call=True
+)
+def annotationHandling(value):
+    if value == "compare":
+        return default_elements
+    else:
+        return default_elements
+
+@callback(
+    Output('cytoscape-view-deutsch', 'stylesheet',allow_duplicate=True),
+    Input('tabs-deutsch', 'value'),
+    prevent_initial_call=True
+)
+def change_stylesheet(value):
+    colorA = theme.custom_pallete['deutsch'][1]
+    colorB = theme.custom_pallete['deutsch'][5]
+    colorBoth = theme.custom_pallete['deutsch'][3]
+    if value == "explorer":
+        return default_stylesheet
+    else:
+        stylesheet = default_stylesheet
+        new_stylesheet = [
+            {
+                "selector": "[classes *= 'A']",
+                "style" : {
+                    "background-color": colorA,
+                    "border-color": colorA
+                }
+            },
+            {
+                "selector": "[classes *= 'both']",
+                "style" : {
+                    "background-color": colorBoth,
+                    "border-color": colorBoth
+                }
+            },
+            {
+                "selector": "[classes *= 'B']",
+                "style" : {
+                    "background-color": colorB,
+                    "border-color": colorB
+                }
+            }
+        ]
+        return stylesheet+new_stylesheet
+
+@callback(
+        Output('cytoscape-view-deutsch', 'elements', allow_duplicate=True),
         Input('select-field-deutsch', 'value'),
-        State('profile-select-deutsch', 'value'),
+        Input('profile-select-deutsch', 'value'),
+        Input('tabs-deutsch', 'value'),
         prevent_initial_call = True
 )
-def select_fields(value, profile):
+def select_fields(value, profile, tab):
     elements = []
     print("field ", value)
     print("profile ", profile)
@@ -343,9 +397,10 @@ def select_profile(value):
 @callback(
         Output('cytoscape-view-deutsch', 'stylesheet'),
         Input('select-field-deutsch', 'value'),
+        Input('profile-select-deutsch', 'value'),
         prevent_initial_call=True
     )
-def annotation_styling(value):
+def annotation_styling(value, tab):
     if value == 'all':
         stylesheet.append(
             {
