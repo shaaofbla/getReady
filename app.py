@@ -63,4 +63,5 @@ def toggle_navbar(is_opened):
 
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    app.run_server(__name__)
+    server = app.server
