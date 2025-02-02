@@ -416,7 +416,7 @@ def goThruJoblist():
 
     jobs = {}
     i = 1
-    with open("german.json", "r") as infile:
+    with open("germanDep.json", "r") as infile:
         scrabbedAlready = json.load(infile)
     infile.close()
     for jobId in scrabbedAlready:

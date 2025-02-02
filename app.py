@@ -1,10 +1,12 @@
 from dash import Dash, html, Input, Output, State
 import dash_mantine_components as dmc
 import dash 
+import pages.theme as theme
 
 app = Dash(__name__, use_pages=True)
 
 app.layout = dmc.MantineProvider(
+    theme=theme.theme,
     children=html.Div(
         [
             dmc.Header(
@@ -42,6 +44,7 @@ app.layout = dmc.MantineProvider(
                 children=[
                     dmc.NavLink(label="Home", href="/"),
                     dmc.NavLink(label="About", href="/about"),
+                    dmc.NavLink(label="Statistik", href="/stats"),
                     dmc.NavLink(label="Mathematik", href="/math"),
                     dmc.NavLink(label="Deutsch", href="/deutsch"),
                 ],
