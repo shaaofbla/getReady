@@ -20,7 +20,7 @@ with open(file_path,'r') as file:
     stylesheet=json.load(file)
 file.close()
 
-file_path = os.path.join(BASE_DIR, 'data', 'jobIdstoJobNames.json')
+file_path = os.path.join(BASE_DIR, 'data', 'jobIdsToJobNames.json')
 with open(file_path, 'r') as file:
     profilesLabels = json.load(file)
 file.close()
