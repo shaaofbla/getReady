@@ -2,23 +2,28 @@ from dash import html, dcc, Input, Output, State, ctx, callback, register_page
 import dash_mantine_components as dmc
 import dash_cytoscape as cyto
 import json
-
+import os
 
 register_page(__name__, path="/math")
 
 cyto.load_extra_layouts()
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
-with open("mathElementsUp.json", "r") as file:
+file_path = os.path.join(BASE_DIR, 'data', 'mathElementsUp.json')
+with open(file_path, "r") as file:
     default_elements = json.load(file)
+file.close()
 
-
-with open('stylesheet.json','r') as file:
+file_path = os.path.join(BASE_DIR, 'data', 'stylesheet.json')
+with open(file_path,'r') as file:
     stylesheet=json.load(file)
+file.close()
 
-with open('jobIdstoJobNames.json', 'r') as file:
+file_path = os.path.join(BASE_DIR, 'data', 'jobIdstoJobNames.json')
+with open(file_path, 'r') as file:
     profilesLabels = json.load(file)
+file.close()
 
 profilesLabelsSelectData = [{"value": "all", "label": "Alle Lernziele anzeigen"}]
 for value in profilesLabels:

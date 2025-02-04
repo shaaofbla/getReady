@@ -1,14 +1,18 @@
 import json
 import pandas as pd
 import plotly.express as px
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
-with open('germanElementsUp.json', 'r') as file:
+file_path = os.path.join(BASE_DIR,'data', 'germanElements.json')
+with open(file_path, 'r') as file:
     elements = json.load(file) 
-
 file.close()
 
-with open('jobIdstoJobNames.json', 'r') as file:
+file_path = os.path.join(BASE_DIR,'data', 'jobIdstoJobNames.json')
+with open(file_path, 'r') as file:
     profilesLabels = json.load(file)
 file.close()
 

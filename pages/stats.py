@@ -3,11 +3,14 @@ import dash_mantine_components as dmc
 import json
 import pandas as pd
 import plotly.express as px
-
+import os
 
 register_page(__name__, path="/stats")
 
-with open('statData.json', 'r') as file:
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+file_path = os.path.join(BASE_DIR, 'data', 'statData.json')
+with open(file_path, 'r') as file:
     data = json.load(file)
 file.close()
 

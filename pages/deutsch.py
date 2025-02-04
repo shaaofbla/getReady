@@ -3,23 +3,28 @@ import dash_mantine_components as dmc
 import dash_cytoscape as cyto
 import json
 import pages.theme as theme
+import os
 
 register_page(__name__, path="/deutsch")
 
 cyto.load_extra_layouts()
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-with open("germanElements.json", "r") as file:
+file_path = os.path.join(BASE_DIR,'data', 'germanElements.json')
+with open(file_path, "r") as file:
     default_elements = json.load(file)
 file.close()
 
-
-with open('stylesheetGerman.json','r') as file:
+file_path = os.path.join(BASE_DIR,'data', 'stylesheetGerman.json')
+with open(file_path,'r') as file:
     stylesheet=json.load(file)
 file.close()
 default_stylesheet = stylesheet.copy()
 
-with open('jobIdstoJobNames.json', 'r') as file:
+
+file_path = os.path.join(BASE_DIR,'data', 'jobIdstoJobNames.json')
+with open(file_path, 'r') as file:
     profilesLabels = json.load(file)
 file.close()
 

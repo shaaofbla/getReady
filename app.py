@@ -4,6 +4,7 @@ import dash
 import pages.theme as theme
 
 app = Dash(__name__, use_pages=True)
+server = app.server
 
 app.layout = dmc.MantineProvider(
     theme=theme.theme,
@@ -66,5 +67,6 @@ def toggle_navbar(is_opened):
 
 
 if __name__ == "__main__":
-    app.run_server(__name__)
-    server = app.server
+    app.run_server(__name__, debug=False)
+    #app.run_server(debug=True)
+    
